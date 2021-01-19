@@ -12,6 +12,15 @@ export default abstract class SimplrComponentBase extends HTMLElement {
         this.requestRender();
     }
 
+    //TODO: Create Interface objects and payloads
+    beforeRender(): void {}
+
+    //TODO: Create Interface objects and payloads
+    afterRender(): void {}
+
+    //TODO: Create Interface objects and payloads
+    updated(): void {}
+
     render(): void {
         renderComponent(this);
     }
@@ -23,13 +32,19 @@ export default abstract class SimplrComponentBase extends HTMLElement {
 
     public requestRender(): void {
         if (this._renderRequested) return;
-        console.log('Render requested');
         this._renderRequested = true;
 
         window.requestAnimationFrame(() => {
+            this.beforeRender();
             this.render();
+            this.afterRender();
             this._renderRequested = false;
         });
+    }
+
+    publish(eventName: string, eventPayload: any) {
+        const event: Event = new CustomEvent(eventName, { detail: eventPayload });
+        this.dispatchEvent(event);
     }
 
     abstract get html(): TemplateResult;

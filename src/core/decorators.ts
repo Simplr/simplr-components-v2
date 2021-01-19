@@ -36,6 +36,7 @@ export function Property(opts: PropertyOptions) {
         const setter = function (this: SimplrComponentBase, value: any) {
             console.log('Setting value ' + name.toString() + ' to ', value);
             this._properties.set(name, value);
+            this.updated();
             this.requestRender();
         };
 
