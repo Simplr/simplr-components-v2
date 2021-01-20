@@ -1,7 +1,7 @@
 {
   "name": "@simplr-wc/footer",
   "version": "0.1.0",
-  "description": "Simple Web Component developed by Simplr",
+  "description": "Footer Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
