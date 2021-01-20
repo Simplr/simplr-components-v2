@@ -301,9 +301,14 @@
         "signature": "b9904cc48c8e0bead17ce00272c3d0e1970a22133904d9e05c83dfac82ddf24f",
         "affectsGlobalScope": false
       },
+      "../template-literals.ts": {
+        "version": "ba9da2247cfc44093cadc49439a43c068c4a4749140343bd727631bfccf22840",
+        "signature": "5bf7f694c94b88aee76c82c9aca33739119b99e84fad213f5b4f76b861370eba",
+        "affectsGlobalScope": false
+      },
       "../index.ts": {
-        "version": "085c0e33805b2bda0b578aa7c30f91971a3ffcea0cb7c82df1892950fc22be49",
-        "signature": "4e416e1b47f83aa14215fc6efc405c7c8bbb74e3219edd39fcb2395cf559d6e5",
+        "version": "1c899752501aa3a0d9b59e12653c18b2024b9da2e43499a2297e8031765dc13a",
+        "signature": "589fc18cd69669cf9f7aa2cfe8cab4f43ea1bc40c1ea3a2fb3232d6b252211ab",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/node/globals.d.ts": {
@@ -1151,7 +1156,8 @@
         "../../../node_modules/tslib/tslib.d.ts",
         "../decorators.ts",
         "../render.ts",
-        "../simplr-component-base.ts"
+        "../simplr-component-base.ts",
+        "../template-literals.ts"
       ],
       "../render.ts": [
         "../../../node_modules/lit-html/lit-html.d.ts",
@@ -1163,6 +1169,9 @@
         "../../../node_modules/tslib/tslib.d.ts",
         "../decorators.ts",
         "../render.ts"
+      ],
+      "../template-literals.ts": [
+        "../../../node_modules/tslib/tslib.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -1516,7 +1525,8 @@
       "../index.ts": [
         "../decorators.ts",
         "../render.ts",
-        "../simplr-component-base.ts"
+        "../simplr-component-base.ts",
+        "../template-literals.ts"
       ],
       "../render.ts": [
         "../../../node_modules/lit-html/lit-html.d.ts",
@@ -1681,7 +1691,8 @@
       "../decorators.ts",
       "../index.ts",
       "../render.ts",
-      "../simplr-component-base.ts"
+      "../simplr-component-base.ts",
+      "../template-literals.ts"
     ]
   },
   "version": "4.1.3"

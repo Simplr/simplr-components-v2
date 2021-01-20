@@ -39,7 +39,7 @@
   "author": "simplr-components",
   "license": "MIT",
   "dependencies": {
-    "@simplr-wc/core": "^0.0.1-pre",
+    "@simplr-wc/core": "^0.0.1-pre-2",
     "lit-element": "^2.0.1",
     "lit-html": "^1.0.0"
   },

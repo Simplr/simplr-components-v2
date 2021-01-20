@@ -1,11 +1,10 @@
 import { html } from 'lit-html';
-import '../src/simplr-components.js';
 import '../src/footer/footer';
 import { ArgTypes, Story } from './story-types.js';
 
 export default {
     title: 'Simplr Footer',
-    component: 'simplr-components',
+    component: 'simplr-footer',
     argTypes: {
         backgroundColor: { control: 'color' },
     },

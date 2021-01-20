@@ -39,7 +39,7 @@
   },
   "prettier": "@simplr-wc/prettier-config",
   "dependencies": {
-    "@simplr-wc/core": "^0.0.1-pre",
+    "@simplr-wc/core": "^0.0.1-pre-1",
     "lit-html": "^1.3.0"
   },
   "publishConfig": {
