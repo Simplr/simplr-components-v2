@@ -1,4 +1,4 @@
-import SimplrComponentBase from './simplr-component-base';
+import { SimplrComponentBase } from './simplr-component-base';
 
 type Constructor<T> = {
     new (...args: any[]): T;
@@ -12,12 +12,9 @@ export type PropertyOptions = {
     value?: any;
 };
 
-const defaultPropertyOptions: PropertyOptions = {
-    type: String,
-    reflect: false,
-};
+export type UpdatedProperties<T = any> = keyof T extends PropertyKey ? Map<keyof T, unknown> : never;
 
-export function CustomElement<T extends SimplrComponentBase>(componentName: string): Function {
+export function CustomElement<_T extends SimplrComponentBase>(componentName: string): Function {
     return function (componentInstance: Constructor<SimplrComponentBase>) {
         componentInstance._is = componentName;
         if (!customElements.get(componentName)) {
@@ -26,18 +23,17 @@ export function CustomElement<T extends SimplrComponentBase>(componentName: stri
     };
 }
 
-export function Property(opts: PropertyOptions) {
+export function Property(_opts: PropertyOptions) {
+    // TODO: Property type checks
     return function (prototype: SimplrComponentBase, name: PropertyKey) {
         const getter = function (this: SimplrComponentBase) {
-            console.log('Getting value', name.toString());
             return this._properties.get(name);
         };
 
         const setter = function (this: SimplrComponentBase, value: any) {
-            console.log('Setting value ' + name.toString() + ' to ', value);
+            const oldValue = this._properties.get(name);
             this._properties.set(name, value);
-            this.updated();
-            this.requestRender();
+            this._queuePropertyUpdate(name.toString(), oldValue);
         };
 
         Object.defineProperty(prototype, name, {

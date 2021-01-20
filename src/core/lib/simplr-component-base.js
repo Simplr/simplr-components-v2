@@ -1,41 +1,30 @@
-import { TemplateResult } from 'lit-html';
-import { UpdatedProperties } from './decorators';
 import { renderComponent } from './render';
-
-export abstract class SimplrComponentBase extends HTMLElement {
-    static _is: string | undefined = undefined;
-
-    _properties: ComponentProperties = new Map();
-    _renderRequested: boolean = false;
-    _updatedProperties: UpdatedProperties = new Map();
-    _willUpdate: boolean = false;
-
+export class SimplrComponentBase extends HTMLElement {
     constructor() {
         super();
+        this._properties = new Map();
+        this._renderRequested = false;
+        this._updatedProperties = new Map();
+        this._willUpdate = false;
         this.requestRender();
     }
-
     //TODO: Create Interface objects and payloads
-    beforeRender(): void {}
-
+    beforeRender() { }
     //TODO: Create Interface objects and payloads
-    afterRender(): void {}
-
-    updated(_updatedProperties: UpdatedProperties): void {}
-
-    render(): void {
+    afterRender() { }
+    updated(_updatedProperties) { }
+    render() {
         renderComponent(this);
     }
-
-    attributeChangedCallback(name: any, oldValue: any, newValue: any) {
+    attributeChangedCallback(name, oldValue, newValue) {
         console.log('AttributeChangedCallback', { name, oldValue, newValue });
-        if (oldValue === newValue) return;
+        if (oldValue === newValue)
+            return;
     }
-
-    public requestRender(): void {
-        if (this._renderRequested) return;
+    requestRender() {
+        if (this._renderRequested)
+            return;
         this._renderRequested = true;
-
         window.requestAnimationFrame(() => {
             this.beforeRender();
             this.render();
@@ -43,17 +32,16 @@ export abstract class SimplrComponentBase extends HTMLElement {
             this._renderRequested = false;
         });
     }
-
-    publish(eventName: string, eventPayload: any) {
-        const event: Event = new CustomEvent(eventName, { detail: eventPayload });
+    publish(eventName, eventPayload) {
+        const event = new CustomEvent(eventName, { detail: eventPayload });
         this.dispatchEvent(event);
     }
-
-    _queuePropertyUpdate(name: string, oldValue: unknown) {
+    _queuePropertyUpdate(name, oldValue) {
         // Set updated property to map of updated
         this._updatedProperties.set(name, oldValue);
         // If already going to update, don't re-trigger
-        if (this._willUpdate) return;
+        if (this._willUpdate)
+            return;
         this._willUpdate = true;
         // Await for next frame, then trigger updated and render request
         window.requestAnimationFrame(() => {
@@ -64,9 +52,6 @@ export abstract class SimplrComponentBase extends HTMLElement {
             this._willUpdate = false;
         });
     }
-
-    abstract get html(): TemplateResult;
-    abstract get css(): string;
 }
-
-export type ComponentProperties<T = any> = keyof T extends PropertyKey ? Map<keyof T, unknown> : never;
+SimplrComponentBase._is = undefined;
+//# sourceMappingURL=simplr-component-base.js.map

@@ -11,8 +11,47 @@ export default {
     },
 };
 
-export const Footer: Story<ArgTypes> = () => html` <simplr-footer .testProperties=${[1, 2, 3]}></simplr-footer> `;
+export const Footer: Story<ArgTypes> = () => html`
+    <style>
+        span {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    </style>
+    <simplr-footer>
+        <span>
+            <h2>Let's create something awesome together</h2>
+            <p>My Name:</p>
+            <p><b>Phone:</b> +22 1231233</p>
+            <p><b>Email</b> john.doe@foobar.dot</p>
+        </span>
+    </simplr-footer>
+`;
 
-export const SecondFooter: Story<ArgTypes> = () => {
-    return html` <simplr-footer></simplr-footer> `;
-};
+export const FooterWithMultipleColumns: Story<ArgTypes> = () => html`
+    <style>
+        span {
+            font-weight: 700;
+            font-size: 18px;
+        }
+    </style>
+    <simplr-footer>
+        <span>
+            <h2>Let's create something awesome together</h2>
+            <p>My Name:</p>
+            <p><b>Phone:</b> +22 1231233</p>
+            <p><b>Email</b> john.doe@foobar.dot</p>
+        </span>
+        <span>
+            <h2>I am a secondary column</h2>
+            <p>Foo</p>
+            <p>Bar</p>
+        </span>
+        <span>
+            <h2>Let's create something awesome together</h2>
+            <p>My Name:</p>
+            <p><b>Phone:</b> +22 1231233</p>
+            <p><b>Email</b> john.doe@foobar.dot</p>
+        </span>
+    </simplr-footer>
+`;

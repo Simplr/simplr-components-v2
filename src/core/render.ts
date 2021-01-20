@@ -1,5 +1,5 @@
 import { html, TemplateResult, render } from 'lit-html';
-import SimplrComponentBase from './simplr-component-base';
+import { SimplrComponentBase } from './simplr-component-base';
 
 export function renderComponent(target: SimplrComponentBase): void {
     const instance = instantiate(target);

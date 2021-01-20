@@ -20,5 +20,5 @@
     "outDir": "./lib",
     "composite": true
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "../core/**/*.ts"]
 }

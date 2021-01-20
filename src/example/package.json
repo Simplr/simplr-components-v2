@@ -1,5 +1,5 @@
 {
-  "name": "@simplr-wc/footer",
+  "name": "@simplr-wc/example",
   "version": "0.1.0",
   "description": "Simple Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
@@ -11,7 +11,7 @@
     "lib/*.d.ts",
     "lib/*.js"
   ],
-  "main": "lib/footer.js",
+  "main": "lib/example.js",
   "type": "module",
   "scripts": {
     "build": "tsc",

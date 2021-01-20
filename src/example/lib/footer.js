@@ -1,18 +1,15 @@
-import { html, TemplateResult } from 'lit-html';
+import { __decorate } from "tslib";
+import { html } from 'lit-html';
 import { SimplrComponentBase, CustomElement } from '@simplr-wc/core';
-
-@CustomElement('simplr-footer')
-export default class SimplrFooter extends SimplrComponentBase {
+let SimplrFooter = class SimplrFooter extends SimplrComponentBase {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
     }
-
-    get html(): TemplateResult {
-        return html` <slot></slot> `;
+    get html() {
+        return html ` <slot></slot> `;
     }
-
-    get css(): string {
+    get css() {
         return `
           :host {
             position: absolute;
@@ -35,4 +32,9 @@ export default class SimplrFooter extends SimplrComponentBase {
           }
       `;
     }
-}
+};
+SimplrFooter = __decorate([
+    CustomElement('simplr-footer')
+], SimplrFooter);
+export default SimplrFooter;
+//# sourceMappingURL=footer.js.map

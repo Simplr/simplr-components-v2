@@ -1,7 +1,7 @@
 {
-  "name": "@simplr-wc/footer",
-  "version": "0.1.0",
-  "description": "Simple Web Component developed by Simplr",
+  "name": "@simplr-wc/core",
+  "version": "0.0.1-pre",
+  "description": "Core libraries for Simplr Component",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "lib/*.d.ts",
     "lib/*.js"
   ],
-  "main": "lib/footer.js",
+  "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
@@ -19,12 +19,7 @@
     "prePublish": "npm run build && npm run analyze",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "javascript",
-    "webcomponent",
-    "webcomponents",
-    "simplr"
-  ],
+  "keywords": ["javascript", "webcomponent", "webcomponents", "simplr"],
   "author": "Simplr <matias@simplr.company>(https://simplr.company)",
   "license": "ISC",
   "devDependencies": {
@@ -39,7 +34,6 @@
   },
   "prettier": "@simplr-wc/prettier-config",
   "dependencies": {
-    "@simplr-wc/core": "^0.0.1-pre",
     "lit-html": "^1.3.0"
   },
   "publishConfig": {
