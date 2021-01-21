@@ -5,9 +5,6 @@ import { SimplrNotification } from '../src/notification/notification';
 export default {
     title: 'Simplr Notification',
     component: 'simplr-notification',
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 };
 
 export const Notification: Story<ArgTypes> = () => {
@@ -15,16 +12,12 @@ export const Notification: Story<ArgTypes> = () => {
         const title = role.substring(0, 1).toUpperCase() + role.substring(1);
         SimplrNotification.open({ title, message, role });
     };
+    const newNotificationNoTimeout = (role: string, message: string) => {
+        const title = role.substring(0, 1).toUpperCase() + role.substring(1);
+        SimplrNotification.open({ title, message, role, timeout: 0 });
+    };
     return html`
-        <style>
-            span {
-                font-weight: 700;
-                font-size: 18px;
-            }
-            simplr-notification {
-                margin: 1rem;
-            }
-        </style>
+        <style></style>
         <button @click=${() => newNotification('info', 'Did you know that Simplr Components use Typescript?')}>
             Notification Info
         </button>
@@ -37,5 +30,8 @@ export const Notification: Story<ArgTypes> = () => {
             Notification Warning
         </button>
         <button @click=${() => newNotification('error', 'Toast has failed successfully')}>Notification Error</button>
+        <button @click=${() => newNotificationNoTimeout('error', 'Toast has failed successfully')}>
+            Notification Error without timeout
+        </button>
     `;
 };

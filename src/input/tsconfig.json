@@ -1,20 +1,24 @@
   {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
     "noEmitOnError": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["esnext", "es2017", "dom"],
     "strict": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "out-tsc",
     "sourceMap": true,
     "inlineSources": true,
+    "declarationMap": true,
+    "declaration": true,
     "rootDir": "./",
-    "allowJs": true
+    "outDir": "./lib",
+    "composite": true
   },
   "include": ["**/*.ts"]
 }

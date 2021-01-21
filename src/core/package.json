@@ -1,6 +1,6 @@
 {
   "name": "@simplr-wc/core",
-  "version": "0.0.1-pre-2",
+  "version": "0.0.1-pre-3",
   "description": "Core libraries for Simplr Component",
   "homepage": "https://simplr.company/",
   "repository": {
@@ -9,14 +9,15 @@
   },
   "files": [
     "lib/*.d.ts",
-    "lib/*.js"
+    "lib/*.js",
+    "custom-elements.json"
   ],
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
     "analyze": "wca analyze example.js --format json --outFile custom-elements.json",
-    "prePublish": "npm run build && npm run analyze",
+    "prePublish": "npm run build && npm run analyze && npm publish --dry-run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": ["javascript", "webcomponent", "webcomponents", "simplr"],

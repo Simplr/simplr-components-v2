@@ -221,6 +221,11 @@
         "signature": "55d7868222288a4054166fecbfbaeee46dd3b1b58e4a118e40e9c8c13a9fbe84",
         "affectsGlobalScope": false
       },
+      "../notification-icons.ts": {
+        "version": "ee763654ee9c1dce3680d049b793a2d93856a70bf85449e80aa8657c7b0b4897",
+        "signature": "7ebf43153d5afefbbd6f07694a4b49524d7186ac0dbf00b41ced053ca979ad94",
+        "affectsGlobalScope": false
+      },
       "../../../node_modules/lit-html/lib/part.d.ts": {
         "version": "6f50729be2e6572691c3bc3a048c0590113427949f661c19dc4d9d6b0b002ec8",
         "signature": "6f50729be2e6572691c3bc3a048c0590113427949f661c19dc4d9d6b0b002ec8",
@@ -286,29 +291,34 @@
         "signature": "98a780cce6e0c824539a52b0d983c54bbdd75d06caf8ab2166e90c721458fd8b",
         "affectsGlobalScope": true
       },
-      "../render.ts": {
-        "version": "affe67d7ddbd67a6bd782eecb11a1c17ae1232fe2d1810e0f49c0af76518af4e",
-        "signature": "5ddcb165c39cc08824c521ff76433493911e95fa79efc45ac8f8d7d2e61c788b",
+      "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts": {
+        "version": "27febc6adba470701a712a03a8c1971ee1096f1d53fb785779a67baa467cc983",
+        "signature": "27febc6adba470701a712a03a8c1971ee1096f1d53fb785779a67baa467cc983",
         "affectsGlobalScope": false
       },
-      "../simplr-component-base.ts": {
-        "version": "1cf7065e967c6e5ed0dfe0fff6c7b41cf248937fa553bc978f71e5f2dc3cf133",
-        "signature": "627ccea754d79ae3307d3a29bd7b967fa56d45a3b28f2eb5a53e116774a75916",
-        "affectsGlobalScope": false
-      },
-      "../decorators.ts": {
-        "version": "498c2ed599f4d1eab7987fb5e410b479601ebd1c45b43fd2b87618fa9e07737d",
+      "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts": {
+        "version": "b9904cc48c8e0bead17ce00272c3d0e1970a22133904d9e05c83dfac82ddf24f",
         "signature": "b9904cc48c8e0bead17ce00272c3d0e1970a22133904d9e05c83dfac82ddf24f",
         "affectsGlobalScope": false
       },
-      "../template-literals.ts": {
-        "version": "ba9da2247cfc44093cadc49439a43c068c4a4749140343bd727631bfccf22840",
+      "../../../node_modules/@simplr-wc/core/lib/render.d.ts": {
+        "version": "5ddcb165c39cc08824c521ff76433493911e95fa79efc45ac8f8d7d2e61c788b",
+        "signature": "5ddcb165c39cc08824c521ff76433493911e95fa79efc45ac8f8d7d2e61c788b",
+        "affectsGlobalScope": false
+      },
+      "../../../node_modules/@simplr-wc/core/lib/template-literals.d.ts": {
+        "version": "5bf7f694c94b88aee76c82c9aca33739119b99e84fad213f5b4f76b861370eba",
         "signature": "5bf7f694c94b88aee76c82c9aca33739119b99e84fad213f5b4f76b861370eba",
         "affectsGlobalScope": false
       },
-      "../index.ts": {
-        "version": "1c899752501aa3a0d9b59e12653c18b2024b9da2e43499a2297e8031765dc13a",
+      "../../../node_modules/@simplr-wc/core/lib/index.d.ts": {
+        "version": "589fc18cd69669cf9f7aa2cfe8cab4f43ea1bc40c1ea3a2fb3232d6b252211ab",
         "signature": "589fc18cd69669cf9f7aa2cfe8cab4f43ea1bc40c1ea3a2fb3232d6b252211ab",
+        "affectsGlobalScope": false
+      },
+      "../notification.ts": {
+        "version": "8fae4f2199abf62f4fb1f28bf1408117800f97c7c15a4d43438a3d5b361dd1e0",
+        "signature": "e2fbd240a58547c50f013f51f559853bb579641a00a6f6cd54287c53d06a005a",
         "affectsGlobalScope": false
       },
       "../../../node_modules/@types/node/globals.d.ts": {
@@ -917,6 +927,23 @@
       "../../../node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "../../../node_modules/@babel/types/lib/index.d.ts"
       ],
+      "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/index.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/render.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/template-literals.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/render.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts"
+      ],
       "../../../node_modules/@types/accepts/index.d.ts": [
         "../../../node_modules/@types/node/http.d.ts",
         "../../../node_modules/@types/node/index.d.ts"
@@ -1304,36 +1331,37 @@
         "../../../node_modules/lit-html/lib/template-result.d.ts",
         "../../../node_modules/lit-html/lib/template.d.ts"
       ],
-      "../decorators.ts": [
-        "../../../node_modules/tslib/tslib.d.ts",
-        "../simplr-component-base.ts"
-      ],
-      "../index.ts": [
-        "../../../node_modules/tslib/tslib.d.ts",
-        "../decorators.ts",
-        "../render.ts",
-        "../simplr-component-base.ts",
-        "../template-literals.ts"
-      ],
-      "../render.ts": [
-        "../../../node_modules/lit-html/lit-html.d.ts",
-        "../../../node_modules/tslib/tslib.d.ts",
-        "../simplr-component-base.ts"
-      ],
-      "../simplr-component-base.ts": [
-        "../../../node_modules/lit-html/lit-html.d.ts",
-        "../../../node_modules/tslib/tslib.d.ts",
-        "../decorators.ts",
-        "../render.ts"
-      ],
-      "../template-literals.ts": [
+      "../notification-icons.ts": [
         "../../../node_modules/tslib/tslib.d.ts"
+      ],
+      "../notification.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/index.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts",
+        "../../../node_modules/tslib/tslib.d.ts",
+        "../notification-icons.ts"
       ]
     },
     "exportedModulesMap": {
       "../../../node_modules/@babel/parser/typings/babel-parser.d.ts": [
         "../../../node_modules/@babel/types/lib/index.d.ts"
       ],
+      "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/index.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/render.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts",
+        "../../../node_modules/@simplr-wc/core/lib/template-literals.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/render.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts"
+      ],
+      "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts"
+      ],
       "../../../node_modules/@types/accepts/index.d.ts": [
         "../../../node_modules/@types/node/http.d.ts",
         "../../../node_modules/@types/node/index.d.ts"
@@ -1721,27 +1749,19 @@
         "../../../node_modules/lit-html/lib/template-result.d.ts",
         "../../../node_modules/lit-html/lib/template.d.ts"
       ],
-      "../decorators.ts": [
-        "../simplr-component-base.ts"
-      ],
-      "../index.ts": [
-        "../decorators.ts",
-        "../render.ts",
-        "../simplr-component-base.ts",
-        "../template-literals.ts"
-      ],
-      "../render.ts": [
-        "../../../node_modules/lit-html/lit-html.d.ts",
-        "../simplr-component-base.ts"
-      ],
-      "../simplr-component-base.ts": [
-        "../../../node_modules/lit-html/lit-html.d.ts",
-        "../decorators.ts"
+      "../notification.ts": [
+        "../../../node_modules/@simplr-wc/core/lib/index.d.ts",
+        "../../../node_modules/lit-html/lit-html.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
       "../../../node_modules/@babel/parser/typings/babel-parser.d.ts",
       "../../../node_modules/@babel/types/lib/index.d.ts",
+      "../../../node_modules/@simplr-wc/core/lib/decorators.d.ts",
+      "../../../node_modules/@simplr-wc/core/lib/index.d.ts",
+      "../../../node_modules/@simplr-wc/core/lib/render.d.ts",
+      "../../../node_modules/@simplr-wc/core/lib/simplr-component-base.d.ts",
+      "../../../node_modules/@simplr-wc/core/lib/template-literals.d.ts",
       "../../../node_modules/@types/accepts/index.d.ts",
       "../../../node_modules/@types/babel__core/index.d.ts",
       "../../../node_modules/@types/babel__generator/index.d.ts",
@@ -1912,11 +1932,8 @@
       "../../../node_modules/typescript/lib/lib.esnext.promise.d.ts",
       "../../../node_modules/typescript/lib/lib.esnext.string.d.ts",
       "../../../node_modules/typescript/lib/lib.esnext.weakref.d.ts",
-      "../decorators.ts",
-      "../index.ts",
-      "../render.ts",
-      "../simplr-component-base.ts",
-      "../template-literals.ts"
+      "../notification-icons.ts",
+      "../notification.ts"
     ]
   },
   "version": "4.1.3"

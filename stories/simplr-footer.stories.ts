@@ -5,9 +5,6 @@ import { ArgTypes, Story } from './story-types.js';
 export default {
     title: 'Simplr Footer',
     component: 'simplr-footer',
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
 };
 
 export const Footer: Story<ArgTypes> = () => html`

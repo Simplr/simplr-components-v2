@@ -1,0 +1,62 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "simplr-notification",
+      "path": "./notification.ts",
+      "description": "A Notification element From Simplr Components\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
+      "properties": [
+        {
+          "name": "timeout",
+          "description": "Timeout of the Notification. Defaults to 4000, Set to 0 to disable timeout.",
+          "type": "number",
+          "default": "4000"
+        },
+        {
+          "name": "title",
+          "description": "Title of the Notification",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "message",
+          "description": "Message of the Notification",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "role",
+          "description": "Role of the Notification. Determines the color and icon.",
+          "type": "NotificationRole",
+          "default": "\"info\""
+        },
+        {
+          "name": "html",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "css",
+          "type": "string"
+        }
+      ],
+      "cssParts": [
+        {
+          "name": "--success-color",
+          "description": "Color of the success-role Notification"
+        },
+        {
+          "name": "--error-color",
+          "description": "Color of the error-role Notification"
+        },
+        {
+          "name": "--info-color",
+          "description": "Color of the info-role Notification"
+        },
+        {
+          "name": "--warning-color",
+          "description": "Color of the warning-role Notification"
+        }
+      ]
+    }
+  ]
+}

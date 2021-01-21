@@ -1,15 +1,7 @@
-import { html, TemplateResult } from 'lit-html';
+import { __decorate } from 'tslib';
+import { html } from 'lit-html';
 import { Property, SimplrComponentBase, CustomElement, css } from '@simplr-wc/core';
 import { infoSign, errorSign, successSign, warningSign } from './notification-icons';
-
-export type SimplrNotificationOptions = {
-    timeout?: number;
-    title: string;
-    message: string;
-    role?: NotificationRole | string;
-};
-
-type NotificationRole = 'info' | 'error' | 'warning' | 'success';
 
 /**
  *   A Notification element From Simplr Components
@@ -28,27 +20,23 @@ type NotificationRole = 'info' | 'error' | 'warning' | 'success';
  *   @csspart [--info-color=#0087d7]        - Color of the info-role Notification
  *   @csspart [--warning-color=#ffbc00]     - Color of the warning-role Notification
  *
- * */
-@CustomElement('simplr-notification')
-export class SimplrNotification extends SimplrComponentBase {
-    @Property({})
-    timeout: number = 4000;
-    @Property({})
-    title: string = '';
-    @Property({})
-    message: string = '';
-    @Property({})
-    role: NotificationRole | string = 'info';
-
-    private closeNotificationRef: EventListener | undefined;
-
+ */
+let SimplrNotification = class SimplrNotification extends SimplrComponentBase {
+    constructor() {
+        super();
+        this.timeout = 4000;
+        this.title = '';
+        this.message = '';
+        this.role = 'info';
+        this.attachShadow({ mode: 'open' });
+    }
     /**
      * Spawn a new Simplr Notification
      *
      * @param {SimplrNotificationOptions} options    - Options to build Notification from
      * */
-    public static open(options: SimplrNotificationOptions) {
-        const notification = document.createElement('simplr-notification') as SimplrNotification;
+    static open(options) {
+        const notification = document.createElement('simplr-notification');
         if (typeof options.timeout !== 'undefined') {
             notification.timeout = options.timeout;
         }
@@ -59,40 +47,29 @@ export class SimplrNotification extends SimplrComponentBase {
         }
         document.body.appendChild(notification);
     }
-
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-    }
-
     connectedCallback() {
         this.setAttribute(this.role, '');
         this.addCloseListener();
     }
-
-    private addCloseListener(): void {
+    addCloseListener() {
         if (this.timeout > 0) {
             window.requestAnimationFrame(() => {
                 this.closeNotificationRef = this.closeNotification.bind(this);
                 const timeoutbar = this.shadowRoot?.querySelector('.timeout-bar');
-
                 timeoutbar?.addEventListener('animationend', this.closeNotificationRef);
             });
         }
     }
-
-    private closeNotification(): void {
+    closeNotification() {
         if (this.closeNotificationRef) {
             this.removeEventListener('animationend', this.closeNotificationRef);
         }
-
         this.addEventListener('animationend', () => {
             this.remove();
         });
         this.setAttribute('closing', '');
     }
-
-    get html(): TemplateResult {
+    get html() {
         return html`
             <div class="notification">
                 <div class="icon-area">
@@ -115,8 +92,7 @@ export class SimplrNotification extends SimplrComponentBase {
             </div>
         `;
     }
-
-    get css(): string {
+    get css() {
         return css`
             :host {
                 --success-color: #41d888;
@@ -288,4 +264,11 @@ export class SimplrNotification extends SimplrComponentBase {
             }
         `;
     }
-}
+};
+__decorate([Property({})], SimplrNotification.prototype, 'timeout', void 0);
+__decorate([Property({})], SimplrNotification.prototype, 'title', void 0);
+__decorate([Property({})], SimplrNotification.prototype, 'message', void 0);
+__decorate([Property({})], SimplrNotification.prototype, 'role', void 0);
+SimplrNotification = __decorate([CustomElement('simplr-notification')], SimplrNotification);
+export { SimplrNotification };
+//# sourceMappingURL=notification.js.map

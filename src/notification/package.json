@@ -1,7 +1,7 @@
 {
   "name": "@simplr-wc/notification",
-  "version": "0.1.0",
-  "description": "Toaster Web Component developed by Simplr",
+  "version": "0.1.1",
+  "description": "Notification Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
@@ -9,14 +9,15 @@
   },
   "files": [
     "lib/*.d.ts",
-    "lib/*.js"
+    "lib/*.js",
+    "custom-elements.json"
   ],
-  "main": "lib/example.js",
+  "main": "lib/notification.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "analyze": "wca analyze example.js --format json --outFile custom-elements.json",
-    "prePublish": "npm run build && npm run analyze",
+    "analyze": "wca analyze ./*.ts --format json --outFile custom-elements.json",
+    "prePublish": "npm run build && npm run analyze && npm publish --dry-run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

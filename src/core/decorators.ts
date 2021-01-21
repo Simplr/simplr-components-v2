@@ -33,6 +33,7 @@ export function Property(_opts: PropertyOptions) {
         const setter = function (this: SimplrComponentBase, value: any) {
             const oldValue = this._properties.get(name);
             this._properties.set(name, value);
+            handleAttributeReflection(this, name.toString(), value, _opts.reflect);
             this._queuePropertyUpdate(name.toString(), oldValue);
         };
 
@@ -41,4 +42,33 @@ export function Property(_opts: PropertyOptions) {
             set: setter,
         });
     };
+}
+
+function handleAttributeReflection(
+    _this: SimplrComponentBase,
+    name: string,
+    value: string | boolean,
+    reflect: boolean | undefined,
+) {
+    if (!reflect || typeof reflect === 'undefined') return;
+
+    const nameL = name.toLowerCase();
+    switch (typeof value) {
+        case 'boolean': {
+            if (value) {
+                _this.setAttribute(nameL, '');
+            } else {
+                _this.removeAttribute(nameL);
+            }
+            break;
+        }
+        case 'string': {
+            if (value == null) {
+                _this.removeAttribute(nameL);
+            } else {
+                _this.setAttribute(nameL, value);
+            }
+            break;
+        }
+    }
 }

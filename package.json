@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@open-wc/building-rollup": "^1.0.0",
+    "@open-wc/demoing-storybook": "^2.4.7",
     "@open-wc/eslint-config": "^4.2.0",
     "@open-wc/testing": "^2.0.0",
     "@simplr-wc/eslint-config": "^1.0.4",
@@ -39,7 +40,8 @@
   "author": "simplr-components",
   "license": "MIT",
   "dependencies": {
-    "@simplr-wc/core": "^0.0.1-pre-2",
+    "@simplr-wc/core": "^0.0.1-pre-3",
+    "@simplr-wc/notification": "^0.1.1",
     "lit-element": "^2.0.1",
     "lit-html": "^1.0.0"
   },
