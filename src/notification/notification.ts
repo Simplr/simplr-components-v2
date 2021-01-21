@@ -1,18 +1,18 @@
 import { html, TemplateResult } from 'lit-html';
 import { Property, SimplrComponentBase, CustomElement, css } from '@simplr-wc/core';
-import { infoSign, errorSign, successSign, warningSign } from './toast-icons';
+import { infoSign, errorSign, successSign, warningSign } from './notification-icons';
 
-export type SimplrToastOptions = {
+export type SimplrNotificationOptions = {
     timeout?: number;
     title: string;
     message: string;
-    role?: ToastRole | string;
+    role?: NotificationRole | string;
 };
 
-type ToastRole = 'info' | 'error' | 'warning' | 'success';
+type NotificationRole = 'info' | 'error' | 'warning' | 'success';
 
-@CustomElement('simplr-toast')
-export class SimplrToast extends SimplrComponentBase {
+@CustomElement('simplr-notification')
+export class SimplrNotification extends SimplrComponentBase {
     @Property({})
     timeoutDuration: number = 4000;
     @Property({})
@@ -20,19 +20,19 @@ export class SimplrToast extends SimplrComponentBase {
     @Property({})
     message: string = '';
     @Property({})
-    role: ToastRole | string = 'info';
+    role: NotificationRole | string = 'info';
 
-    public static open(options: SimplrToastOptions) {
-        const toast = document.createElement('simplr-toast') as SimplrToast;
+    public static open(options: SimplrNotificationOptions) {
+        const notification = document.createElement('simplr-notification') as SimplrNotification;
         if (options.timeout) {
-            toast.timeoutDuration = options.timeout;
+            notification.timeoutDuration = options.timeout;
         }
-        toast.title = options.title;
-        toast.message = options.message;
+        notification.title = options.title;
+        notification.message = options.message;
         if (options.role) {
-            toast.role = options.role;
+            notification.role = options.role;
         }
-        document.body.appendChild(toast);
+        document.body.appendChild(notification);
     }
 
     constructor() {
@@ -44,12 +44,15 @@ export class SimplrToast extends SimplrComponentBase {
         this.setAttribute(this.role, '');
         window.requestAnimationFrame(() => {
             this.shadowRoot?.querySelector('.timeout-bar')?.addEventListener('animationend', () => {
-                this.closeToast();
+                this.closeNotification();
             });
         });
     }
 
-    private closeToast() {
+    private closeNotification() {
+        this.addEventListener('transitionend', () => {
+            this.remove();
+        });
         this.setAttribute('closing', '');
     }
 
@@ -62,10 +65,10 @@ export class SimplrToast extends SimplrComponentBase {
                 </div>
             </div>
             <div class="information-area">
-                <h2>Info!</h2>
-                <p>In the age of technology there is constant access to vast amounts of information.</p>
+                <h2>${this.title}</h2>
+                <p>${this.message}</p>
             </div>
-            <div class="exit-button" @click=${this.closeToast.bind(this)}>
+            <div class="exit-button" @click=${this.closeNotification.bind(this)}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="${errorSign}" />
                 </svg>
@@ -81,14 +84,14 @@ export class SimplrToast extends SimplrComponentBase {
                 --info-color: #0087d7;
                 --warning-color: #ffbc00;
 
-                --toast-color: var(--info-color);
+                --notification-color: var(--info-color);
                 --icon-size: 18px;
 
                 color: #fff;
                 width: 350px;
                 min-height: 100px;
                 border-radius: 4px;
-                background: var(--toast-color);
+                background: var(--notification-color);
                 box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
                     0px 1px 8px 0px rgba(0, 0, 0, 0.12);
 
@@ -114,20 +117,20 @@ export class SimplrToast extends SimplrComponentBase {
             }
 
             :host([success]) {
-                --toast-color: var(--success-color);
+                --notification-color: var(--success-color);
             }
             :host([error]) {
-                --toast-color: var(--error-color);
+                --notification-color: var(--error-color);
             }
             :host([info]) {
-                --toast-color: var(--info-color);
+                --notification-color: var(--info-color);
             }
             :host([warning]) {
-                --toast-color: var(--warning-color);
+                --notification-color: var(--warning-color);
             }
 
             .status-icon svg {
-                fill: var(--toast-color);
+                fill: var(--notification-color);
                 width: var(--icon-size);
                 height: var(--icon-size);
             }
@@ -206,14 +209,11 @@ export class SimplrToast extends SimplrComponentBase {
                 animation-timing-function: linear;
             }
 
-        @keyframes timeout-animation {
-            from {
-                width: 100%;
+            @keyframes timeout-animation {
+                from {
+                    width: 100%;
+                }
             }
-            to {
-                width: 0%;
-            }
-        }
         `;
     }
 }
