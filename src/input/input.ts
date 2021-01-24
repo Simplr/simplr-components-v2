@@ -4,8 +4,6 @@ import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/co
 @CustomElement('simplr-input')
 export default class SimplrInput extends SimplrComponentBase {
     @Property({})
-    type: string = 'text';
-    @Property({})
     input: HTMLInputElement | undefined;
     @Property({})
     label: HTMLLabelElement | undefined;
@@ -13,6 +11,8 @@ export default class SimplrInput extends SimplrComponentBase {
     hasContent: boolean = false;
     @Property({ reflect: true })
     invalid: boolean = false;
+    @Property({ reflect: true })
+    disabled: boolean = false;
 
     constructor() {
         super();
@@ -23,6 +23,25 @@ export default class SimplrInput extends SimplrComponentBase {
         this.input = this.querySelector('input') as HTMLInputElement | undefined;
         this.label = this.querySelector('label') as HTMLLabelElement | undefined;
         this.addListeners();
+    }
+
+    updated(_updatedProperties: any) {
+        if (this.input) {
+            this.input.disabled = this.disabled;
+        }
+    }
+
+    attributeChangedCallback(name: string, oldValue: string, newValue: string) {
+        if (oldValue === newValue) return;
+        switch (name) {
+            case 'disabled':
+                this[name] = newValue != null;
+                break;
+        }
+    }
+
+    static get observedAttributes() {
+        return ['disabled'];
     }
 
     private addListeners(): void {
@@ -47,20 +66,24 @@ export default class SimplrInput extends SimplrComponentBase {
     get css(): string {
         return css`
             :host {
-                display: block;
-                width: 100%;
-                position: relative;
-                padding: 1rem 0 0;
-                overflow: visible;
-
                 --primary-color: #0087d7;
                 --secondary-color: #f94416;
-                --background-color: #3c3c3c;
+                --background-color: transparent;
+                --text-color: rgba(0, 0, 0, 0.87);
+                --border-size: 1px;
 
                 --highlight-color: var(--primary-color);
 
                 --font-size: 16px;
-                --transition: 300ms ease-in-out;
+                --transition: 200ms ease-in-out;
+
+                display: block;
+                width: 100%;
+                position: relative;
+                padding: calc(var(--font-size) * 0.65) 0 0 calc(var(--font-size) * 0.1);
+                overflow: visible;
+                color: var(--text-color);
+                background: var(--background-color);
             }
 
             :host([invalid]) {
@@ -69,7 +92,7 @@ export default class SimplrInput extends SimplrComponentBase {
 
             ::slotted(label) {
                 position: absolute;
-                opacity: 0.4;
+                opacity: 1;
                 font-size: calc(var(--font-size) * 0.8);
                 transition: var(--transition);
                 transform-origin: left;
@@ -85,7 +108,7 @@ export default class SimplrInput extends SimplrComponentBase {
                 outline: none;
                 background: transparent;
                 font-size: calc(var(--font-size) * 0.8);
-                padding-bottom: 6px;
+                padding: 3px 0;
             }
 
             :host::before,
@@ -95,14 +118,14 @@ export default class SimplrInput extends SimplrComponentBase {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                height: 3px;
+                height: var(--border-size);
                 z-index: 1;
             }
 
             :host::before {
                 width: 100%;
-                background: var(--background-color);
-                opacity: 0.4;
+                background: var(--text-color);
+                opacity: 1;
             }
 
             :host::after {
@@ -119,11 +142,20 @@ export default class SimplrInput extends SimplrComponentBase {
                 width: 100%;
             }
 
-            /* TODO: Make label better looking */
             :host(:focus-within) ::slotted(label),
             :host([hasContent]) ::slotted(label) {
-                transform: scale(0.6) translate(0, calc(var(--font-size) * -1.5));
+                transform: scale(0.6) translate(calc(var(--font-size) * 0.1), calc(var(--font-size) * -1.3));
                 opacity: 0.9;
+            }
+
+            :host(:focus-within) ::slotted(label) {
+                color: var(--highlight-color);
+            }
+
+            /* Disabled */
+
+            ::slotted(input[disabled]) {
+                opacity: 0.7;
             }
         `;
     }
