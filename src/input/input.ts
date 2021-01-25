@@ -1,18 +1,32 @@
 import { html, TemplateResult } from 'lit-html';
-import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
+import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 
 @CustomElement('simplr-input')
 export default class SimplrInput extends SimplrComponentBase {
     @Property({})
-    input: HTMLInputElement | undefined;
+    private inputElem: HTMLInputElement | undefined;
     @Property({})
-    label: HTMLLabelElement | undefined;
+    private labelElem: HTMLLabelElement | undefined;
+
+    @Property({ reflect: true })
+    label: string | undefined;
+    @Property({ reflect: true })
+    type: string = 'text';
+    @Property({ reflect: true })
+    name: string = '';
+    @Property({ reflect: true })
+    placeholder: string = '';
+    @Property({ reflect: true })
+    disabled: boolean = false;
+    @Property({ reflect: true })
+    required: boolean = false;
+    @Property({ reflect: true })
+    step: string | undefined;
+
     @Property({ reflect: true })
     hasContent: boolean = false;
     @Property({ reflect: true })
     invalid: boolean = false;
-    @Property({ reflect: true })
-    disabled: boolean = false;
 
     constructor() {
         super();
@@ -20,32 +34,59 @@ export default class SimplrInput extends SimplrComponentBase {
     }
 
     connectedCallback() {
-        this.input = this.querySelector('input') as HTMLInputElement | undefined;
-        this.label = this.querySelector('label') as HTMLLabelElement | undefined;
+        this.createElements();
         this.addListeners();
     }
 
-    updated(_updatedProperties: any) {
-        if (this.input) {
-            this.input.disabled = this.disabled;
+    updated(_updatedProperties: UpdatedProperties) {
+        if (this.inputElem) {
+            this.inputElem.disabled = this.disabled;
         }
+        this.setElementAttributes(_updatedProperties);
     }
 
     attributeChangedCallback(name: string, oldValue: string, newValue: string) {
         if (oldValue === newValue) return;
         switch (name) {
+            case 'required':
             case 'disabled':
                 this[name] = newValue != null;
                 break;
+            default:
+                (this as any)[name] = newValue;
         }
     }
 
     static get observedAttributes() {
-        return ['disabled'];
+        return ['disabled', 'label', 'type', 'placeholder', 'invalid', 'required', 'step'];
+    }
+
+    private createElements(): void {
+        this.labelElem = document.createElement('label');
+        this.appendChild(this.labelElem);
+
+        this.inputElem = document.createElement('input');
+        this.appendChild(this.inputElem);
+    }
+
+    private setElementAttributes(_changedProperties: UpdatedProperties) {
+        if (this.labelElem && _changedProperties.has('label')) {
+            this.labelElem.innerText = this.label || '';
+        }
+        if (this.inputElem) {
+            this.inputElem.type = this.type;
+            this.inputElem.disabled = this.disabled;
+            this.inputElem.name = this.name;
+            if (this.step) {
+                this.inputElem.step = this.step;
+            }
+        }
     }
 
     private addListeners(): void {
-        this.input?.addEventListener('input', this.handleInput.bind(this));
+        this.inputElem?.addEventListener('input', this.handleInput.bind(this));
+        this.inputElem?.addEventListener('focus', this.handleFocus.bind(this));
+        this.inputElem?.addEventListener('blur', this.handleBlur.bind(this));
     }
 
     private handleInput(e: Event) {
@@ -57,6 +98,30 @@ export default class SimplrInput extends SimplrComponentBase {
         if (hasContent && !this.hasContent) {
             this.hasContent = true;
         }
+        this.validate();
+    }
+
+    validate(): void {
+        const value = this.inputElem?.value || '';
+        if (this.required && value.length <= 0) {
+            console.log('aaa');
+            this.invalid = true;
+            return;
+        }
+        this.invalid = !this.inputElem?.checkValidity() || false;
+    }
+
+    private handleFocus() {
+        if (this.inputElem) {
+            this.inputElem.placeholder = this.placeholder;
+        }
+    }
+
+    private handleBlur() {
+        if (this.inputElem) {
+            this.inputElem.placeholder = '';
+        }
+        this.validate();
     }
 
     get html(): TemplateResult {
@@ -88,6 +153,7 @@ export default class SimplrInput extends SimplrComponentBase {
 
             :host([invalid]) {
                 --highlight-color: var(--secondary-color);
+                --text-color: var(--secondary-color);
             }
 
             ::slotted(label) {
@@ -154,6 +220,7 @@ export default class SimplrInput extends SimplrComponentBase {
 
             /* Disabled */
 
+            :host([disabled]) ::slotted(label),
             ::slotted(input[disabled]) {
                 opacity: 0.7;
             }

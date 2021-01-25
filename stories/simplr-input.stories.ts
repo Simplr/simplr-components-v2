@@ -16,19 +16,61 @@ export const Input: Story<ArgTypes> = () => {
                 margin-bottom: 1rem;
             }
         </style>
-        <simplr-input>
-            <label>Testing input</label>
-            <input type="text" name="test-input-1" autocomplete="off" />
-        </simplr-input>
-        <simplr-input>
-            <label>Testing input Two</label>
-            <input type="text" name="test-input-2" />
-        </simplr-input>
+        <simplr-input label="Testing input one" name="input-one" placeholder="Input the desired value"> </simplr-input>
+        <simplr-input label="Testing input two" name="input-two"> </simplr-input>
         <input type="submit" />
     `;
 };
 
-export const InputFontSizes: Story<ArgTypes> = () => {
+export const Number: Story<ArgTypes> = () => {
+    return html`
+        <style>
+            simplr-input {
+                width: 500px;
+                --font-size: 28px;
+                margin-bottom: 1rem;
+            }
+        </style>
+        <simplr-input type="number" label="Testing input one" name="input-one" placeholder="Input the desired value">
+        </simplr-input>
+        <simplr-input type="number" label="I have a step of 0.01" name="input-two" step="0.01"> </simplr-input>
+        <input type="submit" />
+    `;
+};
+
+export const Email: Story<ArgTypes> = () => {
+    return html`
+        <style>
+            simplr-input {
+                width: 500px;
+                --font-size: 28px;
+                margin-bottom: 1rem;
+            }
+        </style>
+        <simplr-input type="email" label="Testing input one" name="input-one" placeholder="Input the desired value">
+        </simplr-input>
+        <simplr-input type="email" label="I have a step of 0.01" name="input-two"> </simplr-input>
+        <input type="submit" />
+    `;
+};
+
+export const Required: Story<ArgTypes> = () => {
+    return html`
+        <style>
+            simplr-input {
+                width: 500px;
+                --font-size: 28px;
+                margin-bottom: 1rem;
+            }
+        </style>
+        <simplr-input required label="Testing input one" name="input-one" placeholder="Input the desired value">
+        </simplr-input>
+        <simplr-input required label="Testing input two" name="input-two"> </simplr-input>
+        <input type="submit" />
+    `;
+};
+
+export const FontSizes: Story<ArgTypes> = () => {
     return html`
         <style>
             simplr-input {
@@ -55,32 +97,17 @@ export const InputFontSizes: Story<ArgTypes> = () => {
             }
         </style>
         <div>
-            <simplr-input>
-                <label>12 Pixels</label>
-                <input type="text" name="test-input-1" autocomplete="off" />
-            </simplr-input>
-            <simplr-input>
-                <label>16 Pixels</label>
-                <input type="text" name="test-input-2" />
-            </simplr-input>
-            <simplr-input>
-                <label>20 Pixels</label>
-                <input type="text" name="test-input-3" />
-            </simplr-input>
-            <simplr-input>
-                <label>24 Pixels</label>
-                <input type="text" name="test-input-4" />
-            </simplr-input>
-            <simplr-input>
-                <label>28 Pixels</label>
-                <input type="text" name="test-input-5" />
-            </simplr-input>
+            <simplr-input label="12 Pixels"> </simplr-input>
+            <simplr-input label="16 Pixels"> </simplr-input>
+            <simplr-input label="20 Pixels"> </simplr-input>
+            <simplr-input label="24 Pixels"> </simplr-input>
+            <simplr-input label="28 Pixels"> </simplr-input>
             <input type="submit" />
         </div>
     `;
 };
 
-export const DisabledInput: Story<ArgTypes> = () => {
+export const Disabled: Story<ArgTypes> = () => {
     return html`
         <style>
             simplr-input {
@@ -89,14 +116,23 @@ export const DisabledInput: Story<ArgTypes> = () => {
                 margin-bottom: 1rem;
             }
         </style>
-        <simplr-input disabled>
-            <label for="test-input-1">Testing input</label>
-            <input id="test-input-1" type="text" name="test-input-1" autocomplete="off" />
-        </simplr-input>
-        <simplr-input>
-            <label>Testing input Two</label>
-            <input type="text" disabled name="test-input-2" />
-        </simplr-input>
+        <simplr-input disabled label="Input one"> </simplr-input>
+        <simplr-input disabled label="Input two"> </simplr-input>
+        <input type="submit" />
+    `;
+};
+
+export const Invalid: Story<ArgTypes> = () => {
+    return html`
+        <style>
+            simplr-input {
+                width: 500px;
+                --font-size: 28px;
+                margin-bottom: 1rem;
+            }
+        </style>
+        <simplr-input invalid label="Input one"> </simplr-input>
+        <simplr-input invalid label="Input two"> </simplr-input>
         <input type="submit" />
     `;
 };
