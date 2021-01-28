@@ -49,7 +49,7 @@ export const Email: Story<ArgTypes> = () => {
         </style>
         <simplr-input type="email" label="Testing input one" name="input-one" placeholder="Input the desired value">
         </simplr-input>
-        <simplr-input type="email" label="I have a step of 0.01" name="input-two"> </simplr-input>
+        <simplr-input type="email" label="We like emails" name="input-two"> </simplr-input>
         <input type="submit" />
     `;
 };

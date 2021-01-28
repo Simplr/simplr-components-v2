@@ -14,6 +14,10 @@ type NotificationRole = 'info' | 'error' | 'warning' | 'success';
 /**
  *   A Notification element From Simplr Components
  *
+ *   Usage:
+ *
+ *   SimplrNotification.open({ title, message, role?, timeout? });
+ *
  *   Create a new Notification by calling the static function SimplrNotification.open();
  *
  *   @element simplr-notification

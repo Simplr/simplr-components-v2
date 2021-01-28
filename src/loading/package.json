@@ -1,7 +1,7 @@
 {
-  "name": "@simplr-wc/example",
+  "name": "@simplr-wc/loading",
   "version": "0.1.0",
-  "description": "Web Component developed by Simplr",
+  "description": "Loading Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "custom-elements.json"
 
   ],
-  "main": "lib/example.js",
+  "main": "lib/loading.js",
   "type": "module",
   "scripts": {
     "build": "tsc",

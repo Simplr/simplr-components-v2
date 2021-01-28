@@ -1,7 +1,7 @@
 {
-  "name": "@simplr-wc/accordion",
+  "name": "@simplr-wc/card",
   "version": "0.1.0",
-  "description": "Accordion Web Component developed by Simplr",
+  "description": "Card Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "custom-elements.json"
 
   ],
-  "main": "lib/accordion.js",
+  "main": "lib/card.js",
   "type": "module",
   "scripts": {
     "build": "tsc",

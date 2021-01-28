@@ -4,7 +4,7 @@
     {
       "name": "simplr-notification",
       "path": "./notification.ts",
-      "description": "A Notification element From Simplr Components\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
+      "description": "A Notification element From Simplr Components\n\nUsage:\n\nSimplrNotification.open({ title, message, role?, timeout? });\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
       "properties": [
         {
           "name": "timeout",

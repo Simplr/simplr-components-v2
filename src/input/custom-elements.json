@@ -2,87 +2,8 @@
   "version": "experimental",
   "tags": [
     {
-      "name": "simplr-accordion",
-      "path": "./src/accordion/accordion.ts",
-      "description": "A Accordion element From Simplr Components\n\nUsage\n\n<simplr-accordion>\n     <label slot=\"label\">Click me to open </label>\n     <span>\n         <h2>Let's create something awesome together</h2>\n         <p>My Name:</p>\n         <p><b>Phone:</b> +22 1231233</p>\n         <p><b>Email</b> john.doe@foobar.dot</p>\n     </span>\n</simplr-accordion>",
-      "attributes": [
-        {
-          "name": "open",
-          "description": "Boolean that is set to true when the accordion is open",
-          "type": "boolean",
-          "default": "false"
-        }
-      ],
-      "properties": [
-        {
-          "name": "contentHeight",
-          "type": "number",
-          "default": "0"
-        },
-        {
-          "name": "open",
-          "attribute": "open",
-          "description": "Boolean that is set to true when the accordion is open",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "html",
-          "type": "TemplateResult"
-        },
-        {
-          "name": "css",
-          "type": "string"
-        }
-      ],
-      "slots": [
-        {
-          "name": "label",
-          "description": "Slot for the label of the accordion"
-        },
-        {
-          "name": "",
-          "description": "Default slot for the content of the accordion"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "--border-color",
-          "description": "Border of the accordion elements"
-        },
-        {
-          "name": "--label-background",
-          "description": "Background of the accordion label"
-        },
-        {
-          "name": "--open-label-background",
-          "description": "Background of the accordion label when the accordion is open"
-        },
-        {
-          "name": "--label-color",
-          "description": "Color of the accordion label"
-        },
-        {
-          "name": "--open-label-color",
-          "description": "Color of the accordion label when the accordion is open"
-        },
-        {
-          "name": "--label-padding",
-          "description": "Padding of the label of the accordion"
-        },
-        {
-          "name": "--content-padding",
-          "description": "Padding of the accordion content"
-        },
-        {
-          "name": "--primary-color",
-          "description": "Primary color for Simplr components"
-        }
-      ]
-    },
-    {
       "name": "simplr-input",
-      "path": "./src/input/input.ts",
+      "path": "./input.ts",
       "description": "A Input element From Simplr Components\n\nUsage\n\n<simplr-input label=\"Testing input one\" name=\"input-one\" placeholder=\"Input the desired value\"> </simplr-input>",
       "attributes": [
         {
@@ -231,63 +152,6 @@
         {
           "name": "--transition",
           "description": "Transition of the input element focus transitions"
-        }
-      ]
-    },
-    {
-      "name": "simplr-notification",
-      "path": "./src/notification/notification.ts",
-      "description": "A Notification element From Simplr Components\n\nUsage:\n\nSimplrNotification.open({ title, message, role?, timeout? });\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
-      "properties": [
-        {
-          "name": "timeout",
-          "description": "Timeout of the Notification. Defaults to 4000, Set to 0 to disable timeout.",
-          "type": "number",
-          "default": "4000"
-        },
-        {
-          "name": "title",
-          "description": "Title of the Notification",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "message",
-          "description": "Message of the Notification",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "role",
-          "description": "Role of the Notification. Determines the color and icon.",
-          "type": "NotificationRole",
-          "default": "\"info\""
-        },
-        {
-          "name": "html",
-          "type": "TemplateResult"
-        },
-        {
-          "name": "css",
-          "type": "string"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "--success-color",
-          "description": "Color of the success-role Notification"
-        },
-        {
-          "name": "--error-color",
-          "description": "Color of the error-role Notification"
-        },
-        {
-          "name": "--info-color",
-          "description": "Color of the info-role Notification"
-        },
-        {
-          "name": "--warning-color",
-          "description": "Color of the warning-role Notification"
         }
       ]
     }

@@ -1,6 +1,36 @@
 import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 
+/**
+ *   A Input element From Simplr Components
+ *
+ *   Usage
+ *
+ *   <simplr-input label="Testing input one" name="input-one" placeholder="Input the desired value"> </simplr-input>
+ *
+ *   @element simplr-input
+ *
+ *   @prop {string} label             - Label of input element
+ *   @prop {string} type              - Type of input element
+ *   @prop {string} name              - Name of input element
+ *   @prop {string} placeholder       - Placeholder of input element
+ *   @prop {boolean} disabled         - Boolean stating if input is disabled
+ *   @prop {boolean} required         - Boolean stating if input is required
+ *   @prop {string} step              - Step attribute for number inputs
+ *
+ *   @attr {boolean} hascontent       - Boolean set true when input has content in it
+ *   @attr {boolean} invalid          - Boolean set true when input has a invalid value
+ *
+ *   @csspart [--primary-color=#0087d7]                     - Primary color of input element
+ *   @csspart [--secondary-color=#f94416]                   - Secondary color of input element. Used for error states
+ *   @csspart [--background-color=transparent]              - Background color of input element
+ *   @csspart [--text-color=rgba(0,0,0,0.87)]               - Text color of input element
+ *   @csspart [--underline-size=1px]                        - Size of the underline of the input elements
+ *   @csspart [--highlight-color=var(--primary-color)]      - Color of the highlights used by the input
+ *   @csspart [--font-size=16px]                            - Font size of the input element
+ *   @csspart [--transition=200ms ease-in-out]              - Transition of the input element focus transitions
+ *
+ * */
 @CustomElement('simplr-input')
 export default class SimplrInput extends SimplrComponentBase {
     @Property({})
@@ -98,7 +128,6 @@ export default class SimplrInput extends SimplrComponentBase {
         if (hasContent && !this.hasContent) {
             this.hasContent = true;
         }
-        this.validate();
     }
 
     validate(): void {
@@ -135,7 +164,7 @@ export default class SimplrInput extends SimplrComponentBase {
                 --secondary-color: #f94416;
                 --background-color: transparent;
                 --text-color: rgba(0, 0, 0, 0.87);
-                --border-size: 1px;
+                --underline-size: 1px;
 
                 --highlight-color: var(--primary-color);
 
@@ -184,7 +213,7 @@ export default class SimplrInput extends SimplrComponentBase {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                height: var(--border-size);
+                height: var(--underline-size);
                 z-index: 1;
             }
 
