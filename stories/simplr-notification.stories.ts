@@ -17,7 +17,6 @@ export const Notification: Story<ArgTypes> = () => {
         SimplrNotification.open({ title, message, role, timeout: 0 });
     };
     return html`
-        <style></style>
         <button @click=${() => newNotification('info', 'Did you know that Simplr Components use Typescript?')}>
             Notification Info
         </button>

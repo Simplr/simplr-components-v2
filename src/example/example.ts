@@ -1,38 +1,31 @@
 import { html, TemplateResult } from 'lit-html';
-import { SimplrComponentBase, CustomElement } from '@simplr-wc/core';
+import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 
-@CustomElement('simplr-footer')
-export default class SimplrFooter extends SimplrComponentBase {
+@CustomElement('simplr-button')
+export default class SimplrButton extends SimplrComponentBase {
+    @Property({ reflect: true })
+    disabled: boolean = false;
+    @Property({ reflect: true })
+    type: string = 'button';
+
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
     }
 
     get html(): TemplateResult {
-        return html` <slot></slot> `;
+        return html`<slot></slot>`;
     }
 
     get css(): string {
-        return `
-          :host {
-            position: absolute;
-            display: flex;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            min-height: 4rem;
-            background: rgb(60, 60, 60);
-            color: #FFF;
-            justify-content: space-between;
-            padding: 0px 10%;
-            box-sizing: border-box;
-            box-shadow: 0px -1px 4px 0px #444745
-          }
+        return css`
+            :host {
+                display: flex;
+                wdith: min-content;
+            }
 
-          ::slotted(*) {
-            flex-basis: 30%;
-            padding: 1.5%;
-          }
-      `;
+            ::slotted(*) {
+            }
+        `;
     }
 }
