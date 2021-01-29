@@ -1,0 +1,50 @@
+{
+  "name": "@simplr-wc/checkbox",
+  "version": "0.1.0",
+  "description": "Web Component developed by Simplr",
+  "homepage": "https://simplr.company/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Simplr/simplr-components"
+  },
+  "files": [
+    "lib/*.d.ts",
+    "lib/*.js",
+    "custom-elements.json"
+
+  ],
+  "main": "lib/checkbox.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "analyze": "wca analyze ./*.ts --format json --outFile custom-elements.json",
+    "prePublish": "npm run build && npm run analyze",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "webcomponent",
+    "webcomponents",
+    "simplr"
+  ],
+  "author": "Simplr <matias@simplr.company>(https://simplr.company)",
+  "license": "ISC",
+  "devDependencies": {
+    "@simplr-wc/eslint-config": "^1.0.4",
+    "@simplr-wc/prettier-config": "^1.0.3",
+    "typescript": "^4.1.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@simplr-wc/eslint-config"
+    ]
+  },
+  "prettier": "@simplr-wc/prettier-config",
+  "dependencies": {
+    "@simplr-wc/core": "^0.0.1-pre-2",
+    "lit-html": "^1.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
