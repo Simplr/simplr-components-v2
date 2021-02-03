@@ -12,6 +12,8 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     disabled: boolean = false;
     @Property({ reflect: true })
     checked: boolean = false;
+    @Property({ reflect: true })
+    indeterminate: boolean = false;
 
     @Property({ reflect: true })
     primary: boolean = false;
@@ -40,13 +42,17 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     }
 
     private addListeners() {
-        this.inputElem?.addEventListener('input', (e: Event) => {
-            console.log(e);
-            const input = e.target as HTMLInputElement;
-            this.checked = input.checked;
-        });
-        this.addEventListener('click', () => {
-            this.checked = !this.checked;
+        window.requestAnimationFrame(() => {
+            this.inputElem?.addEventListener('input', (e: Event) => {
+                const input = e.target as HTMLInputElement;
+                this.checked = input.checked;
+            });
+
+            this.shadowRoot?.querySelector('.checkbox-field')?.addEventListener('click', () => {
+                if (this.inputElem) {
+                    this.inputElem.click();
+                }
+            });
         });
     }
 
@@ -80,12 +86,12 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     }
 
     static get observedAttributes() {
-        return ['label', 'name', 'disabled', 'checked', 'primary', 'secondary', 'success'];
+        return ['label', 'name', 'disabled', 'checked', 'primary', 'secondary', 'success', 'indeterminate'];
     }
 
     get html(): TemplateResult {
         return html`<div class="checkbox-field">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M1.5 12.5 l7.5 6 l12 -15" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="" /></svg>
             </div>
             <slot></slot>`;
     }
@@ -157,12 +163,29 @@ export default class SimplrCheckbox extends SimplrComponentBase {
 
             :host([checked]) .checkbox-field path {
                 stroke-dashoffset: 0;
+                d: path('M1.5 12.5 l7.5 6 l12 -15');
             }
 
+            :host([indeterminate]) .checkbox-field path {
+                stroke-dashoffset: 0;
+                d: path('M3.5 12.5 l17 0');
+            }
+
+            :host([indeterminate]) .checkbox-field,
             :host([checked]) .checkbox-field {
                 background: var(--main-color);
                 transition: 300ms ease-in-out;
                 border: 1px solid var(--main-color);
+            }
+
+            :host([indeterminate]) .checkbox-field::before,
+            :host([checked]) .checkbox-field::before {
+                background: var(--main-color);
+            }
+
+            :host([indeterminate]:hover) .checkbox-field::before,
+            :host([checked]:hover) .checkbox-field::before {
+                opacity: 0.3;
             }
 
             .checkbox-field::before,
@@ -177,10 +200,6 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 border-radius: 50%;
             }
 
-            :host([checked]) .checkbox-field::before {
-                background: var(--main-color);
-            }
-
             .checkbox-field::before {
                 background: #000;
                 opacity: 0;
@@ -188,12 +207,9 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 transition: opacity 200ms ease-in-out;
             }
 
+            :host(:focus-within) .checkbox-field::before,
             :host(:hover) .checkbox-field::before {
-                opacity: 0.05;
-            }
-
-            :host([checked]:hover) .checkbox-field::before {
-                opacity: 0.3;
+                opacity: 0.2;
             }
 
             :host(:active) .checkbox-field::before {
