@@ -1,7 +1,7 @@
 {
-  "name": "@simplr-wc/checkbox",
-  "version": "0.1.8",
-  "description": "Checkbox Web Component developed by Simplr",
+  "name": "@simplr-wc/radio",
+  "version": "0.1.4",
+  "description": "Radio Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "custom-elements.json"
 
   ],
-  "main": "lib/checkbox.js",
+  "main": "lib/radio.js",
   "type": "module",
   "scripts": {
     "build": "tsc",

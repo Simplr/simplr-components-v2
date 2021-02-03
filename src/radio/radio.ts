@@ -1,8 +1,8 @@
 import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 
-@CustomElement('simplr-checkbox')
-export default class SimplrCheckbox extends SimplrComponentBase {
+@CustomElement('simplr-radio')
+export default class SimplrRadio extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string = '';
     @Property({ reflect: true })
@@ -14,8 +14,6 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     disabled: boolean = false;
     @Property({ reflect: true })
     checked: boolean = false;
-    @Property({ reflect: true })
-    indeterminate: boolean = false;
 
     @Property({ reflect: true })
     primary: boolean = false;
@@ -45,12 +43,18 @@ export default class SimplrCheckbox extends SimplrComponentBase {
 
     private addListeners() {
         window.requestAnimationFrame(() => {
-            this.inputElem?.addEventListener('input', (e: Event) => {
-                const input = e.target as HTMLInputElement;
-                this.checked = input.checked;
+            document.querySelectorAll(`input[name='${this.name}']`).forEach(radio => {
+                radio.addEventListener('input', e => {
+                    const target = e.target as SimplrRadio;
+                    if (target.value === this.value) {
+                        this.checked = true;
+                    } else {
+                        this.checked = false;
+                    }
+                });
             });
 
-            this.shadowRoot?.querySelector('.checkbox-field')?.addEventListener('click', () => {
+            this.shadowRoot?.querySelector('.radio-field')?.addEventListener('click', () => {
                 if (this.inputElem) {
                     this.inputElem.click();
                 }
@@ -60,7 +64,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
 
     private createInputComponent() {
         this.inputElem = document.createElement('input');
-        this.inputElem.type = 'checkbox';
+        this.inputElem.type = 'radio';
         this.labelElem = document.createElement('label');
 
         this.appendChild(this.inputElem);
@@ -70,7 +74,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     private updateInputAttributes(_updatedProperties: UpdatedProperties) {
         if (this.inputElem) {
             this.inputElem.name = this.name;
-            this.inputElem.id = `checkbox-${this.name}`;
+            this.inputElem.id = `radio-${this.value}`;
             this.inputElem.value = this.value;
             this.inputElem.checked = this.checked;
             this.inputElem.disabled = this.disabled;
@@ -78,7 +82,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
         if (this.labelElem) {
             if (_updatedProperties.has('label') || _updatedProperties.has('name')) {
                 this.labelElem.innerText = this.label;
-                this.labelElem.setAttribute('for', `checkbox-${this.name}`);
+                this.labelElem.setAttribute('for', `radio-${this.value}`);
             }
         }
     }
@@ -93,7 +97,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     }
 
     get html(): TemplateResult {
-        return html`<div class="checkbox-field">
+        return html`<div class="radio-field">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="" /></svg>
             </div>
             <slot></slot>`;
@@ -135,11 +139,11 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 left: 0;
             }
 
-            .checkbox-field {
+            .radio-field {
                 width: var(--size);
                 height: var(--size);
                 border: 1px solid #000;
-                border-radius: 2px;
+                border-radius: 50%;
                 margin: 0 calc(var(--size) / 2);
                 display: flex;
                 align-items: center;
@@ -149,14 +153,14 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 position: relative;
             }
 
-            .checkbox-field svg {
+            .radio-field svg {
                 width: var(--size);
                 height: var(--size);
                 fill: none;
                 stroke: red;
             }
 
-            .checkbox-field path {
+            .radio-field path {
                 stroke-dashoffset: 40px;
                 stroke-dasharray: 40px;
                 stroke: #fff;
@@ -164,35 +168,27 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 transition: 600ms ease-in-out;
             }
 
-            :host([checked]) .checkbox-field path {
+            :host([checked]) .radio-field path {
                 stroke-dashoffset: 0;
                 d: path('M1.5 12.5 l7.5 6 l12 -15');
             }
 
-            :host([indeterminate]) .checkbox-field path {
-                stroke-dashoffset: 0;
-                d: path('M3.5 12.5 l17 0');
-            }
-
-            :host([indeterminate]) .checkbox-field,
-            :host([checked]) .checkbox-field {
+            :host([checked]) .radio-field {
                 background: var(--main-color);
                 transition: 300ms ease-in-out;
                 border: 1px solid var(--main-color);
             }
 
-            :host([indeterminate]) .checkbox-field::before,
-            :host([checked]) .checkbox-field::before {
+            :host([checked]) .radio-field::before {
                 background: var(--main-color);
             }
 
-            :host([indeterminate]:hover) .checkbox-field::before,
-            :host([checked]:hover) .checkbox-field::before {
+            :host([checked]:hover) .radio-field::before {
                 opacity: 0.3;
             }
 
-            .checkbox-field::before,
-            .checkbox-field::after {
+            .radio-field::before,
+            .radio-field::after {
                 content: '';
                 position: absolute;
                 top: calc(var(--size) / 2 * -1);
@@ -203,23 +199,23 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 border-radius: 50%;
             }
 
-            .checkbox-field::before {
+            .radio-field::before {
                 background: #000;
                 opacity: 0;
                 z-index: -2;
                 transition: opacity 200ms ease-in-out;
             }
 
-            :host(:focus-within) .checkbox-field::before,
-            :host(:hover) .checkbox-field::before {
+            :host(:focus-within) .radio-field::before,
+            :host(:hover) .radio-field::before {
                 opacity: 0.2;
             }
 
-            :host(:active) .checkbox-field::before {
+            :host(:active) .radio-field::before {
                 opacity: 0;
             }
 
-            .checkbox-field::after {
+            .radio-field::after {
                 z-index: -1;
                 background: var(--main-color);
                 transform: scale(1);
@@ -227,7 +223,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 transition: transform 300ms ease-in-out, opacity 700ms ease-in-out;
             }
 
-            :host(:active) .checkbox-field::after {
+            :host(:active) .radio-field::after {
                 transform: scale(0);
                 opacity: 0.9;
                 transition: 0ms;
