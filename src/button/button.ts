@@ -45,7 +45,17 @@ export default class SimplrButton extends SimplrComponentBase {
 
     private addEventListeners() {
         this.addEventListener('keyup', this.handleKeyboardEvent.bind(this));
-        this.addEventListener('click', this.doClick.bind(this));
+        this.addEventListener(
+            'click',
+            e => {
+                // Don't bubble the click event from this one. Bubble it from the actual button
+                if (e.target === this) {
+                    e.stopPropagation();
+                    this.doClick();
+                }
+            },
+            true,
+        );
     }
 
     private handleKeyboardEvent(e: KeyboardEvent) {

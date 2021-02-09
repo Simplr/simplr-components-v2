@@ -1,6 +1,6 @@
 {
-  "name": "@simplr-wc/button",
-  "version": "0.1.1",
+  "name": "@simplr-wc/dialog",
+  "version": "0.1.0",
   "description": "Web Component developed by Simplr",
   "homepage": "https://simplr.company/",
   "repository": {
@@ -13,7 +13,7 @@
     "custom-elements.json"
 
   ],
-  "main": "lib/button.js",
+  "main": "lib/dialog.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
