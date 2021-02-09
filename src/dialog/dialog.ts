@@ -97,7 +97,7 @@ export default class SimplrDialog extends SimplrComponentBase {
             }
 
             :host([visible]) .dialog-area {
-                z-index: 100;
+                z-index: 110;
                 background: #fff;
                 opacity: 1;
                 transform: translate(0, 0);
@@ -119,7 +119,9 @@ export default class SimplrDialog extends SimplrComponentBase {
             }
 
             :host([visible]):after {
+                pointer-events: auto;
                 opacity: 0.7;
+                z-index: 100;
             }
 
             .close-button {
