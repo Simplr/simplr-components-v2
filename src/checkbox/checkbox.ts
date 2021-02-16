@@ -44,17 +44,24 @@ export default class SimplrCheckbox extends SimplrComponentBase {
     }
 
     private addListeners() {
+        this.addEventListener('click', (e: Event) => {
+            e.stopPropagation();
+        });
         window.requestAnimationFrame(() => {
             this.inputElem?.addEventListener('input', (e: Event) => {
                 const input = e.target as HTMLInputElement;
                 this.checked = input.checked;
             });
 
-            this.shadowRoot?.querySelector('.checkbox-field')?.addEventListener('click', () => {
-                if (this.inputElem) {
-                    this.inputElem.click();
-                }
-            });
+            this.shadowRoot?.querySelector('.checkbox-field')?.addEventListener(
+                'click',
+                () => {
+                    if (this.inputElem) {
+                        this.inputElem.click();
+                    }
+                },
+                true,
+            );
         });
     }
 
