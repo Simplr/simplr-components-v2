@@ -44,6 +44,9 @@ export default class SimplrRadio extends SimplrComponentBase {
     private addListeners() {
         this.addEventListener('click', (e: Event) => {
             e.stopPropagation();
+            if (this.inputElem) {
+                this.inputElem.click();
+            }
         });
         window.requestAnimationFrame(() => {
             document.querySelectorAll(`input[name='${this.name}']`).forEach(radio => {
@@ -57,7 +60,7 @@ export default class SimplrRadio extends SimplrComponentBase {
                 });
             });
 
-            this.shadowRoot?.querySelector('.radio-field')?.addEventListener(
+            this.labelElem?.addEventListener(
                 'click',
                 () => {
                     if (this.inputElem) {
