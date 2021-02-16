@@ -3,7 +3,7 @@ import { ArgTypes, Story } from './story-types.js';
 import '../src/input/input';
 
 export default {
-    title: 'Simplr input',
+    title: 'Simplr Input',
     component: 'simplr-input',
 };
 

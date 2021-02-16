@@ -1,0 +1,142 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "simplr-file-input",
+      "path": "./file-input.ts",
+      "description": "A File Input element From Simplr Components\n\nUsage\n\n<simplr-file-input name=\"files\" multi label=\"Drag and Drop your files here\"></simplr-file-input>",
+      "attributes": [
+        {
+          "name": "multi",
+          "description": "Boolean stating if input allows multiple files to be chosen",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "description": "Label of input element",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "description": "Name of input element",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "disabled",
+          "description": "Boolean stating if input is disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "description": "Boolean stating if input is required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "description": "Boolean set true when input has a invalid value",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "filehover",
+          "description": "Boolean set true when a file is hovered on top of the field",
+          "type": "boolean",
+          "default": "false"
+        }
+      ],
+      "properties": [
+        {
+          "name": "inputElem",
+          "type": "HTMLInputElement | undefined"
+        },
+        {
+          "name": "files",
+          "type": "File[]",
+          "default": "[]"
+        },
+        {
+          "name": "multi",
+          "attribute": "multi",
+          "description": "Boolean stating if input allows multiple files to be chosen",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "label",
+          "attribute": "label",
+          "description": "Label of input element",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "Name of input element",
+          "type": "string",
+          "default": "\"\""
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "Boolean stating if input is disabled",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "required",
+          "attribute": "required",
+          "description": "Boolean stating if input is required",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "invalid",
+          "attribute": "invalid",
+          "description": "Boolean set true when input has a invalid value",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "filehover",
+          "attribute": "filehover",
+          "description": "Boolean set true when a file is hovered on top of the field",
+          "type": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "html",
+          "type": "TemplateResult"
+        },
+        {
+          "name": "css",
+          "type": "string"
+        }
+      ],
+      "cssParts": [
+        {
+          "name": "--primary-color",
+          "description": "Primary color of input element"
+        },
+        {
+          "name": "--secondary-color",
+          "description": "Secondary color of input element. Used for error states"
+        },
+        {
+          "name": "--background-color",
+          "description": "Background color of input element"
+        },
+        {
+          "name": "--text-color",
+          "description": "Text color of input element"
+        },
+        {
+          "name": "--list-item-background",
+          "description": "Color of the chosen file list item background"
+        }
+      ]
+    }
+  ]
+}

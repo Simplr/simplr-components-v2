@@ -2,12 +2,33 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 import { repeat } from 'lit-html/directives/repeat';
 
-// TODO: Figure out how to handle submit AND deletion of objects.
-
+/**
+ *   A File Input element From Simplr Components
+ *
+ *   Usage
+ *
+ *   <simplr-file-input name="files" multi label="Drag and Drop your files here"></simplr-file-input>
+ *
+ *   @element simplr-file-input
+ *
+ *   @prop {string} label             - Label of input element
+ *   @prop {string} name              - Name of input element
+ *   @prop {boolean} disabled         - Boolean stating if input is disabled
+ *   @prop {boolean} multi            - Boolean stating if input allows multiple files to be chosen
+ *   @prop {boolean} required         - Boolean stating if input is required
+ *
+ *   @attr {boolean} invalid          - Boolean set true when input has a invalid value
+ *   @attr {boolean} filehover        - Boolean set true when a file is hovered on top of the field
+ *
+ *   @csspart [--primary-color=#0087d7]                     - Primary color of input element
+ *   @csspart [--secondary-color=#f94416]                   - Secondary color of input element. Used for error states
+ *   @csspart [--background-color=transparent]              - Background color of input element
+ *   @csspart [--text-color=rgba(0,0,0,0.4)]                - Text color of input element
+ *   @csspart [--list-item-background=#fff]                 - Color of the chosen file list item background
+ *
+ * */
 @CustomElement('simplr-file-input')
 export default class SimplrFileInput extends SimplrComponentBase {
-    @Property({ reflect: true })
-    multi: boolean = false;
     @Property({ reflect: true })
     label: string | undefined;
     @Property({ reflect: true })
@@ -16,6 +37,8 @@ export default class SimplrFileInput extends SimplrComponentBase {
     disabled: boolean = false;
     @Property({ reflect: true })
     required: boolean = false;
+    @Property({ reflect: true })
+    multi: boolean = false;
     @Property({ reflect: true })
     invalid: boolean = false;
 
@@ -73,15 +96,26 @@ export default class SimplrFileInput extends SimplrComponentBase {
         });
     }
 
+    /**
+     *  @function
+     *  Add file(s) to the file input list
+     *
+     *  @param {Array<File>} files  List of files to add
+     * */
     public addFiles(files: Array<File>) {
         if (this.multi) {
             this.files = [...this.files, ...files];
         } else {
             this.files = [...files];
         }
-        this.createElements();
     }
 
+    /**
+     * @function
+     * Remove a file from the list.
+     *
+     * @param {number | string} indexOrName     Index or name of the file to be removed
+     * */
     public removeFile(indexOrName: number | string) {
         if (typeof indexOrName === 'number') {
             this.files.splice(indexOrName, 1);
@@ -91,13 +125,23 @@ export default class SimplrFileInput extends SimplrComponentBase {
         }
     }
 
+    /**
+     * @function
+     * Get the files added to the input field.
+     *
+     * @returns {Array<File>} files Files that were se on the input field
+     * */
+    public getFiles(): Array<File> {
+        return this.files;
+    }
+
     onRemoveButtonClick(e: Event, index: number) {
         const target = e.target as HTMLElement;
         const listItem = target.parentNode as HTMLElement;
         listItem.addEventListener(
             'transitionend',
             e => {
-                if (e.target === listItem && e.propertyName === 'opacity') {
+                if (e.target === listItem && e.propertyName === 'transform') {
                     this.removeFile(index);
                 }
             },
@@ -113,6 +157,10 @@ export default class SimplrFileInput extends SimplrComponentBase {
             const target = e.target as HTMLInputElement;
             const uploadedFiles = target.files ? Array.from(target.files) : [];
             this.addFiles(uploadedFiles);
+            if (this.inputElem) {
+                this.inputElem.value = '';
+                this.inputElem.blur();
+            }
         });
         this.appendChild(this.inputElem);
         this.addEventListeners(this.inputElem);
@@ -172,11 +220,7 @@ export default class SimplrFileInput extends SimplrComponentBase {
                 --secondary-color: #f94416;
                 --background-color: transparent;
                 --text-color: rgba(0, 0, 0, 0.4);
-
-                --highlight-color: var(--primary-color);
                 --list-item-background: #fff;
-
-                --font-size: 16px;
 
                 display: flex;
                 flex-direction: column;
@@ -345,6 +389,11 @@ export default class SimplrFileInput extends SimplrComponentBase {
             .file-area ul li button:focus::before,
             .file-area ul li button:hover::before {
                 opacity: 0.1;
+            }
+
+            :host([disabled]) {
+                opacity: 0.7;
+                pointer-events: none;
             }
         `;
     }
