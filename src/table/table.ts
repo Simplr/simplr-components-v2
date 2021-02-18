@@ -1,4 +1,5 @@
 import { html, TemplateResult } from 'lit-html';
+import { repeat } from 'lit-html/directives/repeat';
 import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 import '@simplr-wc/checkbox';
 import SimplrCheckbox from '@simplr-wc/checkbox';
@@ -55,12 +56,18 @@ export default class SimplrTable extends SimplrComponentBase {
     connectedCallback() {}
 
     public setData(newData: Array<any>): void {
-        this.data = newData;
+        this.data = Array.from(newData);
+
+        const tableRowIdKey = `${tablePropertyPrefix}_id`;
         this.data.forEach(dRow => {
-            if (!dRow.hasOwnProperty('_table_id')) {
-                dRow[`${tablePropertyPrefix}_id`] = `${Date.now()}${Math.floor(Math.random() * (999 - 100) + 100)}`;
+            if (!dRow.hasOwnProperty(tableRowIdKey)) {
+                dRow[tableRowIdKey] = `${Date.now()}${Math.floor(Math.random() * (999 - 100) + 100)}`;
             }
         });
+    }
+
+    public update(): void {
+        this.requestRender();
     }
 
     public setColumns(newColumns: Array<TableColumn>): void {
@@ -127,7 +134,6 @@ export default class SimplrTable extends SimplrComponentBase {
 
         clickDetail.allSelectedRows = this.getSelectedRows();
         this.dispatchEvent(new CustomEvent('table-row-clicked', { detail: clickDetail }));
-        console.log(this.selectedRows);
     }
 
     async handleCheckboxClick(e: Event, row: any, rowNum: number) {
@@ -251,9 +257,14 @@ export default class SimplrTable extends SimplrComponentBase {
                     </tr>
                 </thead>
                 <tbody>
-                    ${this.data.map(
+                    ${repeat(
+                        this.data,
+                        row => row[tablePropertyPrefix + '_id'],
                         (row, i) => html`
-                            <tr @click=${(e: Event) => this.handleRowClick(e, row, i)} id=${row._table_id}>
+                            <tr
+                                @click=${(e: Event) => this.handleRowClick(e, row, i)}
+                                id=${row[tablePropertyPrefix + '_id']}
+                            >
                                 ${this.renderSelectableCheckboxes(row, i)} ${this.renderLeftSideActions(row, i)}
                                 ${this.columns.map(col => this.createTableDataCell(row, col))}
                                 ${this.renderRightSideActions(row, i)}

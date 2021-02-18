@@ -52,14 +52,10 @@ export const Table: Story<ArgTypes> = () => {
         table = document.querySelector('simplr-table') as SimplrTable;
         table.setData(users);
         table.setColumns(columns);
-        console.log(table);
     }, 50);
 
     return html`
-        <style>
-            path {
-            }
-        </style>
+        <style></style>
 
         <simplr-table
             selectable
