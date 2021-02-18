@@ -14,8 +14,16 @@ export const Radio: Story<ArgTypes> = () => html`
         }
     </style>
     <label class="radio-label">Sandwich type</label>
-    <simplr-radio primary value="steak-and-cheese" name="sandwich-type" label="Steak and Cheese"></simplr-radio>
-    <simplr-radio primary value="tuna" name="sandwich-type" label="Tuna"></simplr-radio>
-    <simplr-radio primary value="ham" name="sandwich-type" label="Ham"></simplr-radio>
-    <simplr-radio primary value="roast-beef" name="sandwich-type" label="Roast Beef"></simplr-radio>
+    <div @click=${() => console.log("SHouldn't reach here")}>
+        <simplr-radio
+            @click=${() => console.log('foo')}
+            primary
+            value="steak-and-cheese"
+            name="sandwich-type"
+            label="Steak and Cheese"
+        ></simplr-radio>
+        <simplr-radio primary value="tuna" name="sandwich-type" label="Tuna"></simplr-radio>
+        <simplr-radio primary value="ham" name="sandwich-type" label="Ham"></simplr-radio>
+        <simplr-radio primary value="roast-beef" name="sandwich-type" label="Roast Beef"></simplr-radio>
+    </div>
 `;

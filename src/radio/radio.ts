@@ -58,6 +58,7 @@ export default class SimplrRadio extends SimplrComponentBase {
                         this.checked = false;
                     }
                 });
+                radio.addEventListener('click', e => e.stopPropagation());
             });
 
             this.labelElem?.addEventListener(

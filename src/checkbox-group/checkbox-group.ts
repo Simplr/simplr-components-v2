@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-html';
-import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
+import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 import SimplrCheckbox from '@simplr-wc/checkbox';
 
 @CustomElement('simplr-checkbox-group')

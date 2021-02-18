@@ -13,6 +13,8 @@ export default class SimplrButton extends SimplrComponentBase {
     contained: boolean = false;
     @Property({ reflect: true })
     elevated: boolean = false;
+    @Property({ reflect: true })
+    rounded: boolean = false;
 
     // Button types
     @Property({ reflect: true })
@@ -69,6 +71,7 @@ export default class SimplrButton extends SimplrComponentBase {
     }
 
     private createButton() {
+        if (this.buttonElem || this.querySelector('button')) return;
         this.buttonElem = document.createElement('button');
         this.buttonElem.tabIndex = -1;
         this.appendChild(this.buttonElem);
@@ -87,7 +90,7 @@ export default class SimplrButton extends SimplrComponentBase {
     }
 
     static get observedAttributes() {
-        return ['disabled', 'type', 'primary', 'secondary', 'success', 'outlined', 'contained', 'elevated'];
+        return ['disabled', 'type', 'primary', 'secondary', 'success', 'outlined', 'contained', 'elevated', 'rounded'];
     }
 
     get html(): TemplateResult {
@@ -176,6 +179,14 @@ export default class SimplrButton extends SimplrComponentBase {
                 pointer-events: none;
             }
 
+            :host([rounded]) {
+                padding: 0.5rem;
+                border-radius: 50%;
+            }
+            :host([rounded])::after {
+                border-radius: 50%;
+            }
+
             :host(:hover)::after,
             :host(:focus-visible)::after {
                 opacity: 0.3;
@@ -210,6 +221,10 @@ export default class SimplrButton extends SimplrComponentBase {
                 height: var(--size);
                 width: var(--size);
                 padding-right: calc(var(--size) * 0.7);
+            }
+
+            :host([rounded]) ::slotted(svg) {
+                padding: 0;
             }
 
             ::slotted(button) {

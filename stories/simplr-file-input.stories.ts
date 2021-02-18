@@ -18,7 +18,7 @@ export const FileInput: Story<ArgTypes> = () => {
     return html`
         <style></style>
         <form @submit=${handleSubmit}>
-            <simplr-file-input name="files" disabled multi label="Drag and Drop your files here"></simplr-file-input>
+            <simplr-file-input name="files" multi label="Drag and Drop your files here"></simplr-file-input>
             <input type="submit" />
         </form>
     `;

@@ -55,6 +55,7 @@ export default class SimplrCheckbox extends SimplrComponentBase {
                 const input = e.target as HTMLInputElement;
                 this.checked = input.checked;
             });
+            this.inputElem?.addEventListener('click', e => e.stopPropagation());
 
             this.labelElem?.addEventListener(
                 'click',
