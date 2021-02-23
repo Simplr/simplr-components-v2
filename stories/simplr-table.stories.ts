@@ -44,8 +44,10 @@ export const Table: Story<ArgTypes> = () => {
     function handleTableAction(e: any) {
         console.log(e);
         const actionClickEvent = e.detail as TableActionClickEvent;
-        users = users.filter(u => u.id !== actionClickEvent.row.id);
-        table.setData(users);
+        if (actionClickEvent.actionName === 'Delete') {
+            users = users.filter(u => u.id !== actionClickEvent.row.id);
+            table.setData(users);
+        }
     }
 
     setTimeout(() => {
@@ -55,13 +57,24 @@ export const Table: Story<ArgTypes> = () => {
     }, 50);
 
     return html`
-        <style></style>
+        <style>
+            simplr-table {
+                margin: 1rem;
+                height: 600px;
+                width: 95%;
+            }
+        </style>
 
         <simplr-table
             selectable
             @table-row-clicked=${(e: any) => handleRowClick(e)}
             @table-action-clicked=${(e: any) => handleTableAction(e)}
         >
+        </simplr-table>
+        <button @click=${addUser}>Add User</button>
+    `;
+    /*
+     *
             <simplr-button slot="actions-left" primary rounded data-action-name="Favorite">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path
@@ -77,6 +90,6 @@ export const Table: Story<ArgTypes> = () => {
                 </svg>
             </simplr-button>
         </simplr-table>
-        <button @click=${addUser}>Add User</button>
-    `;
+     *
+     * */
 };
