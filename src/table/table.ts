@@ -42,7 +42,7 @@ export default class SimplrTable extends SimplrComponentBase {
     @Property({})
     shownRows: Array<any> = [];
     @Property({ reflect: true })
-    pagesize: number = 5;
+    pagesize: number = 20;
     @Property({ reflect: true })
     currentpage: number = 0;
 
@@ -404,6 +404,7 @@ export default class SimplrTable extends SimplrComponentBase {
     get css(): string {
         return css`
             :host {
+                overflow: auto;
                 display: flex;
                 width: 100%;
                 border: 1px solid rgba(224, 224, 224, 1);
@@ -465,7 +466,6 @@ export default class SimplrTable extends SimplrComponentBase {
 
             tfoot {
                 font-size: 14px;
-                opacity: 0.8;
             }
 
             tfoot button {
@@ -492,8 +492,22 @@ export default class SimplrTable extends SimplrComponentBase {
                 padding: 0.5rem 1rem;
             }
 
+            tfoot td * {
+                opacity: 0.8;
+            }
+
             :host([nofooter]) tfoot td {
                 border: none;
+            }
+
+            tfoot,
+            tfoot tr,
+            tfoot td {
+                position: -webkit-sticky;
+                position: sticky;
+                bottom: 0;
+                z-index: 5;
+                background: #fff;
             }
 
             tfoot p {
