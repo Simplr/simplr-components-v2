@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 
 @CustomElement('simplr-button')
-export default class SimplrButton extends SimplrComponentBase {
+export class SimplrButton extends SimplrComponentBase {
     // Button status
     @Property({ reflect: true })
     disabled: boolean = false;
@@ -27,6 +27,10 @@ export default class SimplrButton extends SimplrComponentBase {
     // Button props
     @Property({ reflect: true })
     type: string = 'button';
+    @Property({ reflect: true })
+    name: string = '';
+    @Property({ reflect: true })
+    label: string = 'button';
     @Property({})
     buttonElem: HTMLButtonElement | undefined;
 
@@ -81,6 +85,8 @@ export default class SimplrButton extends SimplrComponentBase {
     private updateButtonAttributes() {
         if (this.buttonElem) {
             this.buttonElem.type = this.type;
+            this.buttonElem.name = this.name;
+            this.buttonElem.setAttribute('aria-label', this.label);
         }
     }
 
@@ -90,7 +96,19 @@ export default class SimplrButton extends SimplrComponentBase {
     }
 
     static get observedAttributes() {
-        return ['disabled', 'type', 'primary', 'secondary', 'success', 'outlined', 'contained', 'elevated', 'rounded'];
+        return [
+            'disabled',
+            'type',
+            'primary',
+            'secondary',
+            'success',
+            'outlined',
+            'contained',
+            'elevated',
+            'rounded',
+            'label',
+            'name',
+        ];
     }
 
     get html(): TemplateResult {
