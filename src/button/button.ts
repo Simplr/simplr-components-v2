@@ -163,9 +163,6 @@ export default class SimplrButton extends SimplrComponentBase {
                 --main-color: var(--success-color);
             }
 
-            :host(:focus) {
-            }
-
             :host::after {
                 content: '';
                 position: absolute;
