@@ -11,7 +11,6 @@
     "lib/*.d.ts",
     "lib/*.js",
     "custom-elements.json"
-
   ],
   "main": "lib/accordion.js",
   "type": "module",
