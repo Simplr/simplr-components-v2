@@ -10,15 +10,9 @@ export default {
 
 export const Button: Story<ArgTypes> = () => html`
     <style></style>
-    <simplr-button primary>
-        Hello, push me
-    </simplr-button>
-    <simplr-button secondary>
-        Hello, push me
-    </simplr-button>
-    <simplr-button success>
-        Hello, push me
-    </simplr-button>
+    <simplr-button primary .name=${'testi'}> Hello, push me </simplr-button>
+    <simplr-button secondary .name=${'testi'}> Hello, push me </simplr-button>
+    <simplr-button success .name=${'testi'}> Hello, push me </simplr-button>
 `;
 
 export const Elevated: Story<ArgTypes> = () => html`
@@ -27,15 +21,9 @@ export const Elevated: Story<ArgTypes> = () => html`
             margin: 1rem;
         }
     </style>
-    <simplr-button primary elevated>
-        Hello, push me
-    </simplr-button>
-    <simplr-button secondary elevated>
-        Hello, push me
-    </simplr-button>
-    <simplr-button success elevated>
-        Hello, push me
-    </simplr-button>
+    <simplr-button primary elevated> Hello, push me </simplr-button>
+    <simplr-button secondary elevated> Hello, push me </simplr-button>
+    <simplr-button success elevated> Hello, push me </simplr-button>
 `;
 
 export const Contained: Story<ArgTypes> = () => html`
@@ -44,15 +32,9 @@ export const Contained: Story<ArgTypes> = () => html`
             margin: 1rem;
         }
     </style>
-    <simplr-button primary contained>
-        Hello, push me
-    </simplr-button>
-    <simplr-button secondary contained>
-        Hello, push me
-    </simplr-button>
-    <simplr-button success contained>
-        Hello, push me
-    </simplr-button>
+    <simplr-button primary contained> Hello, push me </simplr-button>
+    <simplr-button secondary contained> Hello, push me </simplr-button>
+    <simplr-button success contained> Hello, push me </simplr-button>
 `;
 
 export const Outlined: Story<ArgTypes> = () => html`
@@ -61,15 +43,9 @@ export const Outlined: Story<ArgTypes> = () => html`
             margin: 1rem;
         }
     </style>
-    <simplr-button primary outlined>
-        Hello, push me
-    </simplr-button>
-    <simplr-button secondary outlined>
-        Hello, push me
-    </simplr-button>
-    <simplr-button success outlined>
-        Hello, push me
-    </simplr-button>
+    <simplr-button primary outlined> Hello, push me </simplr-button>
+    <simplr-button secondary outlined> Hello, push me </simplr-button>
+    <simplr-button success outlined> Hello, push me </simplr-button>
 `;
 
 export const WithIcon: Story<ArgTypes> = () => html`
