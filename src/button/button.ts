@@ -56,6 +56,7 @@ export class SimplrButton extends SimplrComponentBase {
             e => {
                 // Don't bubble the click event from this one. Bubble it from the actual button
                 if (e.target === this) {
+                    e.preventDefault();
                     e.stopPropagation();
                     this.doClick();
                 }
