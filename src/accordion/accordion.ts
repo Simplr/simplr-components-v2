@@ -37,7 +37,7 @@ import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/co
  *
  * */
 @CustomElement('simplr-accordion')
-export default class SimplrAccordion extends SimplrComponentBase {
+export class SimplrAccordion extends SimplrComponentBase {
     @Property({})
     contentHeight: number = 0;
 

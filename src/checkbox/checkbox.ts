@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 
 @CustomElement('simplr-checkbox')
-export default class SimplrCheckbox extends SimplrComponentBase {
+export class SimplrCheckbox extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string = '';
     @Property({ reflect: true })

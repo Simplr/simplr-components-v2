@@ -17,7 +17,7 @@ const gearPath =
  *
  * */
 @CustomElement('simplr-loading')
-export default class SimplrLoading extends SimplrComponentBase {
+export class SimplrLoading extends SimplrComponentBase {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });

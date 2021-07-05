@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } from '@simplr-wc/core';
 
 @CustomElement('simplr-radio')
-export default class SimplrRadio extends SimplrComponentBase {
+export class SimplrRadio extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string = '';
     @Property({ reflect: true })

@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import '../src/button/button';
 import { ArgTypes, Story } from './story-types.js';
-import LogDisplayer from '../src/log-displayer/log-displayer';
+import { LogDisplayer } from '../src/log-displayer/log-displayer';
 
 export default {
     title: 'Simplr Button',

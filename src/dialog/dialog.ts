@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 
 @CustomElement('simplr-dialog')
-export default class SimplrDialog extends SimplrComponentBase {
+export class SimplrDialog extends SimplrComponentBase {
     @Property({ reflect: true })
     visible: boolean = false;
     @Property({ reflect: true })

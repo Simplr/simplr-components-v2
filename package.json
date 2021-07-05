@@ -1,57 +1,59 @@
 {
-    "devDependencies": {
-        "@open-wc/building-rollup": "^1.10.0",
-        "@open-wc/demoing-storybook": "^2.4.7",
-        "@open-wc/eslint-config": "^4.3.0",
-        "@open-wc/testing": "^2.5.33",
-        "@simplr-wc/eslint-config": "^1.0.4",
-        "@simplr-wc/prettier-config": "^1.0.3",
-        "@typescript-eslint/eslint-plugin": "^2.34.0",
-        "@typescript-eslint/parser": "^2.34.0",
-        "@web/dev-server": "^0.1.17",
-        "@web/dev-server-storybook": "^0.3.5",
-        "@web/test-runner": "^0.11.5",
-        "@web/test-runner-playwright": "^0.8.5",
-        "concurrently": "^5.3.0",
-        "deepmerge": "^4.2.2",
-        "eslint": "^6.8.0",
-        "eslint-config-prettier": "^6.11.0",
-        "husky": "^1.0.0",
-        "lint-staged": "^10.5.4",
-        "prettier": "^2.3.0",
-        "rimraf": "^2.6.3",
-        "rollup": "^2.47.0",
-        "tslib": "^2.2.0",
-        "typescript": "^4.2.4"
-    },
-    "scripts": {
-        "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
-        "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
-        "test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
-        "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --node-resolve --playwright --browsers chromium firefox webkit\"",
-        "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
-        "storybook:build": "tsc && build-storybook",
-        "build": "rimraf dist && tsc && rollup -c rollup.config.js",
-        "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
-        "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
-        "analyze": "wca analyze ./src/**/*.ts --format json --outFile custom-elements.json"
-    },
-    "name": "simplr-components",
-    "version": "0.0.0",
-    "description": "Webcomponent simplr-components following open-wc recommendations",
-    "author": "simplr-components",
-    "license": "MIT",
-    "dependencies": {
-        "@simplr-wc/checkbox": "^0.1.11",
-        "@simplr-wc/core": "^0.0.1-pre-3",
-        "@simplr-wc/notification": "^0.1.1",
-        "lit-element": "^2.5.1",
-        "lit-html": "^1.4.1"
-    },
-    "eslintConfig": {
-        "extends": [
-            "@simplr-wc/eslint-config"
-        ]
-    },
-    "prettier": "@simplr-wc/prettier-config"
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.10",
+    "@open-wc/building-rollup": "^1.10.0",
+    "@open-wc/demoing-storybook": "^2.4.7",
+    "@open-wc/eslint-config": "^4.3.0",
+    "@open-wc/testing": "^2.5.33",
+    "@simplr-wc/eslint-config": "^1.0.4",
+    "@simplr-wc/prettier-config": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^2.34.0",
+    "@web/dev-server": "^0.1.17",
+    "@web/dev-server-storybook": "^0.3.5",
+    "@web/test-runner": "^0.11.5",
+    "@web/test-runner-playwright": "^0.8.5",
+    "concurrently": "^5.3.0",
+    "deepmerge": "^4.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^1.0.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.3.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^2.47.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "scripts": {
+    "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
+    "test": "tsc && wtr --coverage --node-resolve --playwright --browsers chromium firefox webkit",
+    "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch --node-resolve --playwright --browsers chromium firefox webkit\"",
+    "storybook": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
+    "storybook:build": "tsc && build-storybook",
+    "build": "rimraf dist && tsc && rollup -c rollup.config.js",
+    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
+    "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
+    "analyze": "cem analyze --exclude \"stories\" \"out-tsc\""
+  },
+  "name": "simplr-components",
+  "version": "0.0.0",
+  "description": "Webcomponent simplr-components following open-wc recommendations",
+  "author": "simplr-components",
+  "license": "MIT",
+  "dependencies": {
+    "@simplr-wc/checkbox": "^0.1.11",
+    "@simplr-wc/core": "^0.0.1-pre-3",
+    "@simplr-wc/notification": "^0.1.1",
+    "lit-element": "^2.5.1",
+    "lit-html": "^1.4.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@simplr-wc/eslint-config"
+    ]
+  },
+  "prettier": "@simplr-wc/prettier-config",
+  "customElements": "custom-elements.json"
 }

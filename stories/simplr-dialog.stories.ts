@@ -2,7 +2,7 @@ import { html } from 'lit-html';
 import '../src/dialog/dialog';
 import '../src/button/button';
 import { ArgTypes, Story } from './story-types.js';
-import SimplrDialog from '../src/dialog/dialog';
+import { SimplrDialog } from '../src/dialog/dialog';
 
 export default {
     title: 'Simplr Dialog',

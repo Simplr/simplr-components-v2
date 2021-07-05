@@ -1,293 +1,6041 @@
 {
-  "version": "experimental",
-  "tags": [
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
     {
-      "name": "simplr-accordion",
-      "path": "./src/accordion/accordion.ts",
-      "description": "A Accordion element From Simplr Components\n\nUsage\n\n<simplr-accordion>\n     <label slot=\"label\">Click me to open </label>\n     <span>\n         <h2>Let's create something awesome together</h2>\n         <p>My Name:</p>\n         <p><b>Phone:</b> +22 1231233</p>\n         <p><b>Email</b> john.doe@foobar.dot</p>\n     </span>\n</simplr-accordion>",
-      "attributes": [
+      "kind": "javascript-module",
+      "path": "src/SimplrComponents.ts",
+      "declarations": [
         {
-          "name": "open",
-          "description": "Boolean that is set to true when the accordion is open",
-          "type": "boolean",
-          "default": "false"
+          "kind": "class",
+          "description": "",
+          "name": "SimplrComponents",
+          "members": [
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "'My app'"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "static": true,
+              "default": "css`\n    :host {\n      min-height: 100vh;\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: flex-start;\n      font-size: calc(10px + 2vmin);\n      color: #1a2b42;\n      max-width: 960px;\n      margin: 0 auto;\n      text-align: center;\n      background-color: var(--simplr-components-background-color);\n    }\n\n    main {\n      flex-grow: 1;\n    }\n\n    .logo > svg {\n      margin-top: 36px;\n      animation: app-logo-spin infinite 20s linear;\n    }\n\n    @keyframes app-logo-spin {\n      from {\n        transform: rotate(0deg);\n      }\n      to {\n        transform: rotate(360deg);\n      }\n    }\n\n    .app-footer {\n      font-size: calc(12px + 0.5vmin);\n      align-items: center;\n    }\n\n    .app-footer a {\n      margin-left: 5px;\n    }\n  `"
+            },
+            {
+              "kind": "method",
+              "name": "render"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit-element"
+          },
+          "tagName": "simplr-components",
+          "customElement": true
         }
       ],
-      "properties": [
+      "exports": [
         {
-          "name": "contentHeight",
-          "type": "number",
-          "default": "0"
-        },
-        {
-          "name": "open",
-          "attribute": "open",
-          "description": "Boolean that is set to true when the accordion is open",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "html",
-          "type": "TemplateResult"
-        },
-        {
-          "name": "css",
-          "type": "string"
-        }
-      ],
-      "slots": [
-        {
-          "name": "label",
-          "description": "Slot for the label of the accordion"
-        },
-        {
-          "name": "",
-          "description": "Default slot for the content of the accordion"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "--border-color",
-          "description": "Border of the accordion elements"
-        },
-        {
-          "name": "--label-background",
-          "description": "Background of the accordion label"
-        },
-        {
-          "name": "--open-label-background",
-          "description": "Background of the accordion label when the accordion is open"
-        },
-        {
-          "name": "--label-color",
-          "description": "Color of the accordion label"
-        },
-        {
-          "name": "--open-label-color",
-          "description": "Color of the accordion label when the accordion is open"
-        },
-        {
-          "name": "--label-padding",
-          "description": "Padding of the label of the accordion"
-        },
-        {
-          "name": "--content-padding",
-          "description": "Padding of the accordion content"
-        },
-        {
-          "name": "--primary-color",
-          "description": "Primary color for Simplr components"
+          "kind": "js",
+          "name": "SimplrComponents",
+          "declaration": {
+            "name": "SimplrComponents",
+            "module": "src/SimplrComponents.ts"
+          }
         }
       ]
     },
     {
-      "name": "simplr-input",
-      "path": "./src/input/input.ts",
-      "description": "A Input element From Simplr Components\n\nUsage\n\n<simplr-input label=\"Testing input one\" name=\"input-one\" placeholder=\"Input the desired value\"> </simplr-input>",
-      "attributes": [
+      "kind": "javascript-module",
+      "path": "src/open-wc-logo.ts",
+      "declarations": [
         {
-          "name": "disabled",
-          "description": "Boolean stating if input is disabled",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "label",
-          "description": "Label of input element",
-          "type": "string"
-        },
-        {
-          "name": "type",
-          "description": "Type of input element",
-          "type": "string",
-          "default": "\"text\""
-        },
-        {
-          "name": "placeholder",
-          "description": "Placeholder of input element",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "invalid",
-          "description": "Boolean set true when input has a invalid value",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "required",
-          "description": "Boolean stating if input is required",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "step",
-          "description": "Step attribute for number inputs",
-          "type": "string"
-        },
-        {
-          "name": "hascontent",
-          "description": "Boolean set true when input has content in it",
-          "type": "boolean"
+          "kind": "variable",
+          "name": "openWcLogo",
+          "default": "html`\n  <svg\n    width=\"244px\"\n    height=\"244px\"\n    viewBox=\"0 0 244 244\"\n    version=\"1.1\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n  >\n    <defs>\n      <linearGradient x1=\"50%\" y1=\"0%\" x2=\"50%\" y2=\"100%\" id=\"linearGradient-1\">\n        <stop stop-color=\"#9B00FF\" offset=\"0%\"></stop>\n        <stop stop-color=\"#0077FF\" offset=\"100%\"></stop>\n      </linearGradient>\n    </defs>\n    <g\n      id=\"Page-1\"\n      stroke=\"none\"\n      stroke-width=\"1\"\n      fill=\"none\"\n      fill-rule=\"evenodd\"\n    >\n      <path\n        d=\"M205.639259,176.936244 C207.430887,174.217233 209.093339,171.405629 210.617884,168.510161 M215.112174,158.724316 C216.385153,155.50304 217.495621,152.199852 218.433474,148.824851 M220.655293,138.874185 C221.231935,135.482212 221.637704,132.03207 221.863435,128.532919 M222,118.131039 C221.860539,114.466419 221.523806,110.85231 221.000113,107.299021 M218.885321,96.8583653 C218.001583,93.4468963 216.942225,90.1061026 215.717466,86.8461994 M211.549484,77.3039459 C209.957339,74.1238901 208.200597,71.0404957 206.290425,68.0649233 M200.180513,59.5598295 C181.848457,36.6639805 153.655709,22 122.036748,22 C66.7879774,22 22,66.771525 22,122 C22,177.228475 66.7879774,222 122.036748,222 C152.914668,222 180.52509,208.015313 198.875424,186.036326\"\n        id=\"Shape\"\n        stroke=\"url(#linearGradient-1)\"\n        stroke-width=\"42.0804674\"\n      ></path>\n    </g>\n  </svg>\n`"
         }
       ],
-      "properties": [
+      "exports": [
         {
-          "name": "hasContent",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "name",
-          "description": "Name of input element",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "disabled",
-          "attribute": "disabled",
-          "description": "Boolean stating if input is disabled",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "label",
-          "attribute": "label",
-          "description": "Label of input element",
-          "type": "string"
-        },
-        {
-          "name": "type",
-          "attribute": "type",
-          "description": "Type of input element",
-          "type": "string",
-          "default": "\"text\""
-        },
-        {
-          "name": "placeholder",
-          "attribute": "placeholder",
-          "description": "Placeholder of input element",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "invalid",
-          "attribute": "invalid",
-          "description": "Boolean set true when input has a invalid value",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "required",
-          "attribute": "required",
-          "description": "Boolean stating if input is required",
-          "type": "boolean",
-          "default": "false"
-        },
-        {
-          "name": "step",
-          "attribute": "step",
-          "description": "Step attribute for number inputs",
-          "type": "string"
-        },
-        {
-          "name": "html",
-          "type": "TemplateResult"
-        },
-        {
-          "name": "css",
-          "type": "string"
-        }
-      ],
-      "cssParts": [
-        {
-          "name": "--primary-color",
-          "description": "Primary color of input element"
-        },
-        {
-          "name": "--secondary-color",
-          "description": "Secondary color of input element. Used for error states"
-        },
-        {
-          "name": "--background-color",
-          "description": "Background color of input element"
-        },
-        {
-          "name": "--text-color",
-          "description": "Text color of input element"
-        },
-        {
-          "name": "--underline-size",
-          "description": "Size of the underline of the input elements"
-        },
-        {
-          "name": "--highlight-color",
-          "description": "Color of the highlights used by the input"
-        },
-        {
-          "name": "--font-size",
-          "description": "Font size of the input element"
-        },
-        {
-          "name": "--transition",
-          "description": "Transition of the input element focus transitions"
+          "kind": "js",
+          "name": "openWcLogo",
+          "declaration": {
+            "name": "openWcLogo",
+            "module": "src/open-wc-logo.ts"
+          }
         }
       ]
     },
     {
-      "name": "simplr-notification",
-      "path": "./src/notification/notification.ts",
-      "description": "A Notification element From Simplr Components\n\nUsage:\n\nSimplrNotification.open({ title, message, role?, timeout? });\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
-      "properties": [
+      "kind": "javascript-module",
+      "path": "src/simplr-components.ts",
+      "declarations": [],
+      "exports": [
         {
-          "name": "timeout",
-          "description": "Timeout of the Notification. Defaults to 4000, Set to 0 to disable timeout.",
-          "type": "number",
-          "default": "4000"
-        },
+          "kind": "custom-element-definition",
+          "name": "simplr-components",
+          "declaration": {
+            "name": "SimplrComponents",
+            "module": "/src/SimplrComponents.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/accordion/SimplrAccordion.ts",
+      "declarations": [
         {
-          "name": "title",
-          "description": "Title of the Notification",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "message",
-          "description": "Message of the Notification",
-          "type": "string",
-          "default": "\"\""
-        },
-        {
-          "name": "role",
-          "description": "Role of the Notification. Determines the color and icon.",
-          "type": "NotificationRole",
-          "default": "\"info\""
-        },
-        {
-          "name": "html",
-          "type": "TemplateResult"
-        },
-        {
-          "name": "css",
-          "type": "string"
+          "kind": "class",
+          "description": "A Accordion element From Simplr Components\n\nUsage\n\n<simplr-accordion>\n    <label slot=\"label\">Click me to open </label>\n    <span>\n        <h2>Let's create something awesome together</h2>\n        <p>My Name:</p>\n        <p><b>Phone:</b> +22 1231233</p>\n        <p><b>Email</b> john.doe@foobar.dot</p>\n    </span>\n</simplr-accordion>",
+          "name": "SimplrAccordion",
+          "cssParts": [
+            {
+              "description": "Border of the accordion elements",
+              "name": "--border-color",
+              "default": "1px solid #d6d1e0"
+            },
+            {
+              "description": "Background of the accordion label",
+              "name": "--label-background",
+              "default": "none"
+            },
+            {
+              "description": "Background of the accordion label when the accordion is open",
+              "name": "--open-label-background",
+              "default": "var(--primary-color)"
+            },
+            {
+              "description": "Color of the accordion label",
+              "name": "--label-color",
+              "default": "#000"
+            },
+            {
+              "description": "Color of the accordion label when the accordion is open",
+              "name": "--open-label-color",
+              "default": "#fff"
+            },
+            {
+              "description": "Padding of the label of the accordion",
+              "name": "--label-padding",
+              "default": "1rem 0 1rem 1rem"
+            },
+            {
+              "description": "Padding of the accordion content",
+              "name": "--content-padding",
+              "default": "1rem"
+            },
+            {
+              "description": "Primary color for Simplr components",
+              "name": "--primary-color",
+              "default": "#0087d7"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Slot for the label of the accordion",
+              "name": "label"
+            },
+            {
+              "description": "Default slot for the content of the accordion",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "contentHeight",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean that is set to true when the accordion is open"
+            },
+            {
+              "kind": "field",
+              "name": "first",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "last",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "setOrder",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "addListeners",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true on the first element in a collection of accordion",
+              "name": "first"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true on the last element in a collection of accordion",
+              "name": "last"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-accordion",
+          "customElement": true
         }
       ],
-      "cssParts": [
+      "exports": [
         {
-          "name": "--success-color",
-          "description": "Color of the success-role Notification"
+          "kind": "js",
+          "name": "SimplrAccordion",
+          "declaration": {
+            "name": "SimplrAccordion",
+            "module": "src/accordion/SimplrAccordion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/accordion/accordion.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A Accordion element From Simplr Components\n\nUsage\n\n<simplr-accordion>\n    <label slot=\"label\">Click me to open </label>\n    <span>\n        <h2>Let's create something awesome together</h2>\n        <p>My Name:</p>\n        <p><b>Phone:</b> +22 1231233</p>\n        <p><b>Email</b> john.doe@foobar.dot</p>\n    </span>\n</simplr-accordion>",
+          "name": "SimplrAccordion",
+          "cssParts": [
+            {
+              "description": "Border of the accordion elements",
+              "name": "--border-color",
+              "default": "1px solid #d6d1e0"
+            },
+            {
+              "description": "Background of the accordion label",
+              "name": "--label-background",
+              "default": "none"
+            },
+            {
+              "description": "Background of the accordion label when the accordion is open",
+              "name": "--open-label-background",
+              "default": "var(--primary-color)"
+            },
+            {
+              "description": "Color of the accordion label",
+              "name": "--label-color",
+              "default": "#000"
+            },
+            {
+              "description": "Color of the accordion label when the accordion is open",
+              "name": "--open-label-color",
+              "default": "#fff"
+            },
+            {
+              "description": "Padding of the label of the accordion",
+              "name": "--label-padding",
+              "default": "1rem 0 1rem 1rem"
+            },
+            {
+              "description": "Padding of the accordion content",
+              "name": "--content-padding",
+              "default": "1rem"
+            },
+            {
+              "description": "Primary color for Simplr components",
+              "name": "--primary-color",
+              "default": "#0087d7"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Slot for the label of the accordion",
+              "name": "label"
+            },
+            {
+              "description": "Default slot for the content of the accordion",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "contentHeight",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "open",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean that is set to true when the accordion is open"
+            },
+            {
+              "kind": "field",
+              "name": "first",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "last",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "setOrder",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "addListeners",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "open"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true on the first element in a collection of accordion",
+              "name": "first"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true on the last element in a collection of accordion",
+              "name": "last"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-accordion",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrAccordion",
+          "declaration": {
+            "name": "SimplrAccordion",
+            "module": "src/accordion/accordion.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrButton",
+          "members": [
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "outlined",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "contained",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "elevated",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "rounded",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "secondary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "'button'"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'button'"
+            },
+            {
+              "kind": "field",
+              "name": "buttonElem",
+              "type": {
+                "text": "HTMLButtonElement | undefined"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "addEventListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleKeyboardEvent",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "doClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "createButton",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateButtonAttributes",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "success"
+            },
+            {
+              "name": "outlined"
+            },
+            {
+              "name": "contained"
+            },
+            {
+              "name": "elevated"
+            },
+            {
+              "name": "rounded"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrButton",
+          "declaration": {
+            "name": "SimplrButton",
+            "module": "src/button/button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/card/card.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrCard",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "subtitle",
+              "type": {
+                "text": "string | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label"
+            },
+            {
+              "name": "subtitle"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrCard",
+          "declaration": {
+            "name": "SimplrCard",
+            "module": "src/card/card.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox/checkbox.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrCheckbox",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "secondary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "inputElem",
+              "type": {
+                "text": "HTMLInputElement | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labelElem",
+              "type": {
+                "text": "HTMLLabelElement | undefined"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "addListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "createInputComponent",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateInputAttributes",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "checked"
+            },
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "success"
+            },
+            {
+              "name": "indeterminate"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrCheckbox",
+          "declaration": {
+            "name": "SimplrCheckbox",
+            "module": "src/checkbox/checkbox.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox-group/checkbox-group.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrCheckboxGroup",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "secondary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "inputElements",
+              "type": {
+                "text": "Array<SimplrCheckbox>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "addCheckboxListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleGroupInput",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "checked"
+            },
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "success"
+            },
+            {
+              "name": "indeterminate"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrCheckboxGroup",
+          "declaration": {
+            "name": "SimplrCheckboxGroup",
+            "module": "src/checkbox-group/checkbox-group.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/decorators.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "CustomElement",
+          "return": {
+            "type": {
+              "text": "Function"
+            }
+          },
+          "parameters": [
+            {
+              "name": "componentName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
         },
         {
-          "name": "--error-color",
-          "description": "Color of the error-role Notification"
+          "kind": "function",
+          "name": "Property",
+          "parameters": [
+            {
+              "name": "_opts",
+              "type": {
+                "text": "PropertyOptions"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "module": "src/core/decorators.ts"
+          }
         },
         {
-          "name": "--info-color",
-          "description": "Color of the info-role Notification"
+          "kind": "custom-element-definition",
+          "name": "componentName",
+          "declaration": {
+            "name": "componentInstance",
+            "module": "src/core/decorators.ts"
+          }
         },
         {
-          "name": "--warning-color",
-          "description": "Color of the warning-role Notification"
+          "kind": "js",
+          "name": "Property",
+          "declaration": {
+            "name": "Property",
+            "module": "src/core/decorators.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PropertyOptions",
+          "declaration": {
+            "name": "PropertyOptions",
+            "module": "./decorators"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "UpdatedProperties",
+          "declaration": {
+            "name": "UpdatedProperties",
+            "module": "./decorators"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "module": "./decorators"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Property",
+          "declaration": {
+            "name": "Property",
+            "module": "./decorators"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "renderComponent",
+          "declaration": {
+            "name": "renderComponent",
+            "module": "./render"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "instantiate",
+          "declaration": {
+            "name": "instantiate",
+            "module": "./render"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SimplrComponentBase",
+          "declaration": {
+            "name": "SimplrComponentBase",
+            "module": "./simplr-component-base"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ComponentProperties",
+          "declaration": {
+            "name": "ComponentProperties",
+            "module": "./simplr-component-base"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "css",
+          "declaration": {
+            "name": "css",
+            "module": "./template-literals"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/render.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "renderComponent",
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          },
+          "parameters": [
+            {
+              "name": "target",
+              "type": {
+                "text": "SimplrComponentBase"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "instantiate",
+          "return": {
+            "type": {
+              "text": "TemplateResult"
+            }
+          },
+          "parameters": [
+            {
+              "name": "component",
+              "type": {
+                "text": "SimplrComponentBase"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "renderComponent",
+          "declaration": {
+            "name": "renderComponent",
+            "module": "src/core/render.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "instantiate",
+          "declaration": {
+            "name": "instantiate",
+            "module": "src/core/render.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/simplr-component-base.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrComponentBase",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined"
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()"
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()"
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrComponentBase",
+          "declaration": {
+            "name": "SimplrComponentBase",
+            "module": "src/core/simplr-component-base.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/template-literals.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "css",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          },
+          "parameters": [
+            {
+              "name": "strings",
+              "type": {
+                "text": "TemplateStringsArray"
+              }
+            },
+            {
+              "name": "keys",
+              "type": {
+                "text": "unknown[]"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "css",
+          "declaration": {
+            "name": "css",
+            "module": "src/core/template-literals.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/dialog.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrDialog",
+          "members": [
+            {
+              "kind": "field",
+              "name": "visible",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "hideclose",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "open",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getFrame",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "close",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createCloseArea",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "hideclose"
+            },
+            {
+              "name": "visible"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrDialog",
+          "declaration": {
+            "name": "SimplrDialog",
+            "module": "src/dialog/dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/example/example.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrExample",
+          "members": [
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "'button'"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrExample",
+          "declaration": {
+            "name": "SimplrExample",
+            "module": "src/example/example.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/file-input/file-input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A File Input element From Simplr Components\n\nUsage\n\n<simplr-file-input name=\"files\" multi label=\"Drag and Drop your files here\"></simplr-file-input>",
+          "name": "SimplrFileInput",
+          "cssParts": [
+            {
+              "description": "Primary color of input element",
+              "name": "--primary-color",
+              "default": "#0087d7"
+            },
+            {
+              "description": "Secondary color of input element. Used for error states",
+              "name": "--secondary-color",
+              "default": "#f94416"
+            },
+            {
+              "description": "Background color of input element",
+              "name": "--background-color",
+              "default": "transparent"
+            },
+            {
+              "description": "Text color of input element",
+              "name": "--text-color",
+              "default": "rgba(0,0,0,0.4)"
+            },
+            {
+              "description": "Color of the chosen file list item background",
+              "name": "--list-item-background",
+              "default": "#fff"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Label of input element"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Name of input element"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean stating if input is disabled"
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean stating if input is required"
+            },
+            {
+              "kind": "field",
+              "name": "multi",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean stating if input allows multiple files to be chosen"
+            },
+            {
+              "kind": "field",
+              "name": "invalid",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "filehover",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "inputElem",
+              "type": {
+                "text": "HTMLInputElement | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "files",
+              "type": {
+                "text": "Array<File>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "addEventListeners",
+              "parameters": [
+                {
+                  "name": "inputElem",
+                  "type": {
+                    "text": "HTMLInputElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "addFiles",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "files",
+                  "type": {
+                    "text": "Array<File>"
+                  },
+                  "description": "List of files to add"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "removeFile",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "indexOrName",
+                  "type": {
+                    "text": "number | string"
+                  },
+                  "description": "Index or name of the file to be removed"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getFiles",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "Array<File>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onRemoveButtonClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                },
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "createElements",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setElementAttributes",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "multi"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "required"
+            },
+            {
+              "name": "invalid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true when input has a invalid value"
+            },
+            {
+              "name": "filehover",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true when a file is hovered on top of the field"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-file-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrFileInput",
+          "declaration": {
+            "name": "SimplrFileInput",
+            "module": "src/file-input/file-input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/footer/footer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrFooter",
+          "members": [
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrFooter",
+          "declaration": {
+            "name": "SimplrFooter",
+            "module": "src/footer/footer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/input.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A Input element From Simplr Components\n\nUsage\n\n<simplr-input label=\"Testing input one\" name=\"input-one\" placeholder=\"Input the desired value\"> </simplr-input>",
+          "name": "SimplrInput",
+          "cssParts": [
+            {
+              "description": "Primary color of input element",
+              "name": "--primary-color",
+              "default": "#0087d7"
+            },
+            {
+              "description": "Secondary color of input element. Used for error states",
+              "name": "--secondary-color",
+              "default": "#f94416"
+            },
+            {
+              "description": "Background color of input element",
+              "name": "--background-color",
+              "default": "transparent"
+            },
+            {
+              "description": "Text color of input element",
+              "name": "--text-color",
+              "default": "rgba(0,0,0,0.87)"
+            },
+            {
+              "description": "Size of the underline of the input elements",
+              "name": "--underline-size",
+              "default": "1px"
+            },
+            {
+              "description": "Color of the highlights used by the input",
+              "name": "--highlight-color",
+              "default": "var(--primary-color)"
+            },
+            {
+              "description": "Font size of the input element",
+              "name": "--font-size",
+              "default": "16px"
+            },
+            {
+              "description": "Transition of the input element focus transitions",
+              "name": "--transition",
+              "default": "200ms ease-in-out"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "inputElem",
+              "type": {
+                "text": "HTMLInputElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "labelElem",
+              "type": {
+                "text": "HTMLLabelElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Label of input element"
+            },
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "string"
+              },
+              "default": "'text'",
+              "description": "Type of input element"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Name of input element"
+            },
+            {
+              "kind": "field",
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Placeholder of input element"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean stating if input is disabled"
+            },
+            {
+              "kind": "field",
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Boolean stating if input is required"
+            },
+            {
+              "kind": "field",
+              "name": "step",
+              "type": {
+                "text": "string"
+              },
+              "description": "Step attribute for number inputs"
+            },
+            {
+              "kind": "field",
+              "name": "hasContent",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "invalid",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "createElements",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setElementAttributes",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "_changedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "addListeners",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleInput",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "validate",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "handleBlur",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "type"
+            },
+            {
+              "name": "placeholder"
+            },
+            {
+              "name": "invalid",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true when input has a invalid value"
+            },
+            {
+              "name": "required"
+            },
+            {
+              "name": "step"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Boolean set true when input has content in it",
+              "name": "hascontent"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrInput",
+          "declaration": {
+            "name": "SimplrInput",
+            "module": "src/input/input.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/loading/loading.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A Loading element From Simplr Components\n\nUsage\n\n<simplr-loading></simplr-loading>\n\nTo remove loading, call hide()",
+          "name": "SimplrLoading",
+          "members": [
+            {
+              "kind": "method",
+              "name": "hide",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-loading",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrLoading",
+          "declaration": {
+            "name": "SimplrLoading",
+            "module": "src/loading/loading.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/log-displayer/log-displayer.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "LogDisplayer",
+          "description": "Overwrites the console loggers and displays a notification in addioton to the classic log"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LogDisplayer",
+          "declaration": {
+            "name": "LogDisplayer",
+            "module": "src/log-displayer/log-displayer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/notification/notification-icons.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "errorSign",
+          "type": {
+            "text": "string"
+          },
+          "default": "'M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z'"
+        },
+        {
+          "kind": "variable",
+          "name": "successSign",
+          "type": {
+            "text": "string"
+          },
+          "default": "'M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'"
+        },
+        {
+          "kind": "variable",
+          "name": "infoSign",
+          "type": {
+            "text": "string"
+          },
+          "default": "'M 10.00,2.00 C 10.00,2.00 10.00,6.00 10.00,6.00 10.00,6.00 14.00,6.00 14.00,6.00 14.00,6.00 14.00,2.00 14.00,2.00 14.00,2.00 10.00,2.00 10.00,2.00  M 10.00,11.00 C 10.00,11.00 10.00,22.00 10.00,22.00 10.00,22.00 14.00,22.00 14.00,22.00 14.00,22.00 14.00,11.00 14.00,11.00 14.00,11.00 10.00,11.00 10.00,11.00 Z'"
+        },
+        {
+          "kind": "variable",
+          "name": "warningSign",
+          "type": {
+            "text": "string"
+          },
+          "default": "'M 10.00,2.0 C 10.00,2.00 10.00,13.00 10.00,13.00 10.00,13.00 14.00,13.00 14.00,13.00 14.00,13.00 14.00,2.00 14.00,2.00 14.00,2.00 10.00,2.00 10.00,2.00  M 10.00,18.0 C 10.00,18.00 10.00,22.00 10.00,22.00 10.00,22.00 14.00,22.00 14.00,22.00 14.00,22.00 14.00,18.00 14.00,18.00 14.00,18.00 10.00,18.00 10.00,18.00 Z'"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "errorSign",
+          "declaration": {
+            "name": "errorSign",
+            "module": "src/notification/notification-icons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "successSign",
+          "declaration": {
+            "name": "successSign",
+            "module": "src/notification/notification-icons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "infoSign",
+          "declaration": {
+            "name": "infoSign",
+            "module": "src/notification/notification-icons.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "warningSign",
+          "declaration": {
+            "name": "warningSign",
+            "module": "src/notification/notification-icons.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/notification/notification.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A Notification element From Simplr Components\n\nUsage:\n\nSimplrNotification.open({ title, message, role?, timeout? });\n\nCreate a new Notification by calling the static function SimplrNotification.open();",
+          "name": "SimplrNotification",
+          "cssParts": [
+            {
+              "description": "Color of the success-role Notification",
+              "name": "--success-color",
+              "default": "#41d888"
+            },
+            {
+              "description": "Color of the error-role Notification",
+              "name": "--error-color",
+              "default": "#f94416"
+            },
+            {
+              "description": "Color of the info-role Notification",
+              "name": "--info-color",
+              "default": "#0087d7"
+            },
+            {
+              "description": "Color of the warning-role Notification",
+              "name": "--warning-color",
+              "default": "#ffbc00"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "timeout",
+              "type": {
+                "text": "number"
+              },
+              "default": "4000",
+              "description": "Timeout of the Notification. Defaults to 4000, Set to 0 to disable timeout."
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Title of the Notification"
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Message of the Notification"
+            },
+            {
+              "kind": "field",
+              "name": "role",
+              "type": {
+                "text": "NotificationRole"
+              },
+              "default": "'info'",
+              "description": "Role of the Notification. Determines the color and icon."
+            },
+            {
+              "kind": "field",
+              "name": "closeNotificationRef",
+              "type": {
+                "text": "EventListener | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "open",
+              "privacy": "public",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "SimplrNotificationOptions"
+                  },
+                  "description": "Options to build Notification from"
+                }
+              ],
+              "description": "Spawn a new Simplr Notification"
+            },
+            {
+              "kind": "method",
+              "name": "addCloseListener",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "closeNotification",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-notification",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrNotification",
+          "declaration": {
+            "name": "SimplrNotification",
+            "module": "src/notification/notification.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/radio/radio.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrRadio",
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "default": "''"
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "primary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "secondary",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "success",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "inputElem",
+              "type": {
+                "text": "HTMLInputElement | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "labelElem",
+              "type": {
+                "text": "HTMLLabelElement | undefined"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "addListeners",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "createInputComponent",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "updateInputAttributes",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value"
+            },
+            {
+              "name": "label"
+            },
+            {
+              "name": "name"
+            },
+            {
+              "name": "disabled"
+            },
+            {
+              "name": "checked"
+            },
+            {
+              "name": "primary"
+            },
+            {
+              "name": "secondary"
+            },
+            {
+              "name": "success"
+            },
+            {
+              "name": "indeterminate"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrRadio",
+          "declaration": {
+            "name": "SimplrRadio",
+            "module": "src/radio/radio.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/table/table.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "SimplrTable",
+          "members": [
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "Array<any>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "columns",
+              "type": {
+                "text": "Array<TableColumn>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "shownRows",
+              "type": {
+                "text": "Array<any>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "pagesize",
+              "type": {
+                "text": "number"
+              },
+              "default": "20"
+            },
+            {
+              "kind": "field",
+              "name": "currentpage",
+              "type": {
+                "text": "number"
+              },
+              "default": "0"
+            },
+            {
+              "kind": "field",
+              "name": "dense",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "selectable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "clickable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "nofooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "leftSideActions",
+              "type": {
+                "text": "Array<Node>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "rightSideActions",
+              "type": {
+                "text": "Array<Node>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "field",
+              "name": "selectedRows",
+              "type": {
+                "text": "Array<any>"
+              },
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "setData",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "newData",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "initializeHeaderWidths",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "update",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setColumns",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "newColumns",
+                  "type": {
+                    "text": "Array<TableColumn>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "setPage",
+              "parameters": [
+                {
+                  "name": "pageNum",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getFirstRowIndex",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getLastRowIndex",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setShownRows",
+              "parameters": [
+                {
+                  "name": "shownRows",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "nextPage",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "previousPage",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "onLastPage",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onFirstPage",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "handleSlotChange",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleRowClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                },
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "rowNum",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleRowSelect",
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "rowNum",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selected",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "handleCheckboxClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                },
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "rowNum",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getSelectedRows",
+              "privacy": "public"
+            },
+            {
+              "kind": "method",
+              "name": "sanitizeRowList",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Array<any>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "rowList",
+                  "type": {
+                    "text": "Array<any>"
+                  }
+                }
+              ],
+              "description": "Remove properties set by Simplr Table"
+            },
+            {
+              "kind": "method",
+              "name": "getRows",
+              "return": {
+                "type": {
+                  "text": "Array<HTMLTableRowElement>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getTotalColumnCount",
+              "return": {
+                "type": {
+                  "text": "number"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getFrame",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "getColumnHeader",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "col",
+                  "type": {
+                    "text": "TableColumn"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getColumnData",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "col",
+                  "type": {
+                    "text": "TableColumn"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "createTableDataHeader",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "col",
+                  "type": {
+                    "text": "TableColumn"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "createTableDataCell",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "col",
+                  "type": {
+                    "text": "TableColumn"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderSelectableCheckboxes",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "rowNum",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "selectedRowIds",
+                  "type": {
+                    "text": "Array<string>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderLeftSideActions",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "i",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Create the TemplateResult for the left side actions, and\nsave them since we don't want to re-create them"
+            },
+            {
+              "kind": "method",
+              "name": "renderRightSideActions",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "i",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ],
+              "description": "Create the TemplateResult for the right side actions, and\nsave them since we don't want to re-create them"
+            },
+            {
+              "kind": "method",
+              "name": "createSideActions",
+              "parameters": [
+                {
+                  "name": "row",
+                  "type": {
+                    "text": "any"
+                  }
+                },
+                {
+                  "name": "i",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "sideActions",
+                  "type": {
+                    "text": "Array<Node>"
+                  }
+                },
+                {
+                  "name": "actionKey",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "padLeftSideActions",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "padRightSideActions",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "html",
+              "type": {
+                "text": "TemplateResult"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "css",
+              "type": {
+                "text": "string"
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_is",
+              "type": {
+                "text": "string | undefined"
+              },
+              "static": true,
+              "default": "undefined",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_properties",
+              "type": {
+                "text": "ComponentProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_renderRequested",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_updatedProperties",
+              "type": {
+                "text": "UpdatedProperties"
+              },
+              "default": "new Map()",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_willUpdate",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "beforeRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "afterRender",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "_updatedProperties",
+                  "type": {
+                    "text": "UpdatedProperties"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "requestRender",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "publish",
+              "parameters": [
+                {
+                  "name": "eventName",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "eventPayload",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_queuePropertyUpdate",
+              "parameters": [
+                {
+                  "name": "name",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "oldValue",
+                  "type": {
+                    "text": "unknown"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "SimplrComponentBase",
+                "module": "src/core/simplr-component-base.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "table-row-clicked",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "table-action-clicked",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "dense"
+            },
+            {
+              "name": "clickable"
+            },
+            {
+              "name": "selectable"
+            },
+            {
+              "name": "pagesize"
+            },
+            {
+              "name": "currentpage"
+            },
+            {
+              "name": "nofooter"
+            }
+          ],
+          "superclass": {
+            "name": "SimplrComponentBase",
+            "package": "@simplr-wc/core"
+          },
+          "tagName": "simplr-table",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SimplrTable",
+          "declaration": {
+            "name": "SimplrTable",
+            "module": "src/table/table.ts"
+          }
         }
       ]
     }

@@ -1,6 +1,6 @@
 import { html } from 'lit-html';
 import '../src/file-input/file-input';
-import SimplrFileInput from '../src/file-input/file-input';
+import { SimplrFileInput } from '../src/file-input/file-input';
 import { ArgTypes, Story } from './story-types.js';
 
 export default {

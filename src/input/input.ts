@@ -32,7 +32,7 @@ import { SimplrComponentBase, CustomElement, Property, css, UpdatedProperties } 
  *
  * */
 @CustomElement('simplr-input')
-export default class SimplrInput extends SimplrComponentBase {
+export class SimplrInput extends SimplrComponentBase {
     @Property({})
     private inputElem: HTMLInputElement | undefined;
     @Property({})

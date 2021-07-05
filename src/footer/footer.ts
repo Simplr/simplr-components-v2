@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement } from '@simplr-wc/core';
 
 @CustomElement('simplr-footer')
-export default class SimplrFooter extends SimplrComponentBase {
+export class SimplrFooter extends SimplrComponentBase {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });

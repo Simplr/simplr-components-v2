@@ -32,8 +32,11 @@ const rowIdKey = `${tablePropertyPrefix}_id`;
 const leftSideActionsKey = `${tablePropertyPrefix}_leftActions`;
 const rightSideActionsKey = `${tablePropertyPrefix}_rightActions`;
 
+/**
+ * @tagname simplr-table
+ * */
 @CustomElement('simplr-table')
-export default class SimplrTable extends SimplrComponentBase {
+export class SimplrTable extends SimplrComponentBase {
     @Property({})
     data: Array<any> = [];
     @Property({})
@@ -68,7 +71,7 @@ export default class SimplrTable extends SimplrComponentBase {
         this.attachShadow({ mode: 'open' });
     }
 
-    connectedCallback() {}
+    connectedCallback() { }
 
     public setData(newData: Array<any>): void {
         this.data = Array.from(newData);
@@ -345,9 +348,9 @@ export default class SimplrTable extends SimplrComponentBase {
                 </thead>
                 <tbody>
                     ${repeat(
-                        this.shownRows,
-                        row => row[rowIdKey],
-                        (row, i) => html`
+            this.shownRows,
+            row => row[rowIdKey],
+            (row, i) => html`
                             <tr @click=${(e: Event) => this.handleRowClick(e, row, i)} id=${row[rowIdKey]}>
                                 ${this.renderSelectableCheckboxes(row, i, selectedRowIds)}
                                 ${this.renderLeftSideActions(row, i)}
@@ -355,15 +358,15 @@ export default class SimplrTable extends SimplrComponentBase {
                                 ${this.renderRightSideActions(row, i)}
                             </tr>
                         `,
-                    )}
+        )}
                     <tr class="spacer"></tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="${this.getTotalColumnCount()}">
                             ${this.nofooter
-                                ? html`<slot name="footer"></slot>`
-                                : html`
+                ? html`<slot name="footer"></slot>`
+                : html`
                                       <div>
                                           <p>
                                               ${this.getFirstRowIndex() + 1} - ${this.getLastRowIndex()} of

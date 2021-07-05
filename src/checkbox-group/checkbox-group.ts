@@ -3,7 +3,7 @@ import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/co
 import SimplrCheckbox from '@simplr-wc/checkbox';
 
 @CustomElement('simplr-checkbox-group')
-export default class SimplrCheckboxGroup extends SimplrComponentBase {
+export class SimplrCheckboxGroup extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string = '';
     @Property({ reflect: true })

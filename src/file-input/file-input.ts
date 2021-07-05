@@ -28,7 +28,7 @@ import { repeat } from 'lit-html/directives/repeat';
  *
  * */
 @CustomElement('simplr-file-input')
-export default class SimplrFileInput extends SimplrComponentBase {
+export class SimplrFileInput extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string | undefined;
     @Property({ reflect: true })

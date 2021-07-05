@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, css, Property } from '@simplr-wc/core';
 
 @CustomElement('simplr-card')
-export default class SimplrCard extends SimplrComponentBase {
+export class SimplrCard extends SimplrComponentBase {
     @Property({ reflect: true })
     label: string | undefined;
     @Property({ reflect: true })

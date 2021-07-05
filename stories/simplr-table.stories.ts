@@ -1,7 +1,7 @@
 import { html } from 'lit-html';
 import '../src/table/table';
 import '../src/button/button';
-import SimplrTable, { TableActionClickEvent, TableColumn } from '../src/table/table';
+import { SimplrTable, TableActionClickEvent, TableColumn } from '../src/table/table';
 import { ArgTypes, Story } from './story-types.js';
 
 export default {

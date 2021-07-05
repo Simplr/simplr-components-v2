@@ -2,7 +2,7 @@ import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 
 @CustomElement('simplr-example')
-export default class SimplrExample extends SimplrComponentBase {
+export class SimplrExample extends SimplrComponentBase {
     @Property({ reflect: true })
     disabled: boolean = false;
     @Property({ reflect: true })

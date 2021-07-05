@@ -1,6 +1,9 @@
 import { html, TemplateResult } from 'lit-html';
 import { SimplrComponentBase, CustomElement, Property, css } from '@simplr-wc/core';
 
+/**
+ * @tagname simplr-button
+ * */
 @CustomElement('simplr-button')
 export class SimplrButton extends SimplrComponentBase {
     // Button status
